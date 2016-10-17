@@ -8,8 +8,14 @@
 
 #import "AppDelegate.h"
 #import "GOTArticleService.h"
+#import "GOTArticleViewModel.h"
+#import "GOTArticleViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, strong) GOTArticleViewModel *viewModel;
+@property (nonatomic, strong) GOTArticleService *viewModelServices;
 
 @end
 
@@ -17,9 +23,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.navigationController = [UINavigationController new];
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    // create and navigate to a view controller
+    UIViewController *viewController = [self createInitialViewController];
+    [self.navigationController pushViewController:viewController animated:NO];
+    
+    // show the navigation controller
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (UIViewController *)createInitialViewController {
+    self.viewModelServices = [[GOTArticleService alloc] init];
+    self.viewModel = [[GOTArticleViewModel alloc] initWithService:self.viewModelServices];
+    
+    //self.viewModel = [GOTArticleViewModel new];
+    
+    return [[GOTArticleViewController alloc] initWithViewModel:self.viewModel];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

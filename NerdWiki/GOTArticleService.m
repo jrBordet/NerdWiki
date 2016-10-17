@@ -10,6 +10,7 @@
 #import "JRHttpClientDelegate.h"
 #import "JRHttpClient.h"
 #import "ReactiveCocoa/RACEXTScope.h"
+#import "GOTArticle.h"
 
 @interface GOTArticleService ()
 
@@ -24,46 +25,31 @@
     
     if (self) {
         _requests = [NSMutableSet new];
-        // ciaoo
     }
     
     return self;
 }
 
-
-- (RACSignal *)fetchTopArticles {
-    return [self performRequestWithQuery:nil transform:^id(NSDictionary *jsonResponse) {
-        NSLog(@"%@", jsonResponse);
-        for (id object in jsonResponse) {
-            NSLog(@"%@", object);
-        }
-        return nil;
-    }];
-}
-
-- (RACSignal *)performRequestWithQuery:(NSDictionary *)query transform:(id (^)(NSDictionary *response))jsonResponse {
-    @weakify(self)
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self)
-        [[JRHttpClient sharedClient] setDelegate:self];
+- (RACSignal *)fetchTopCharacters {
+    NSDictionary *queryString = @ {
+        @"expand": @"1",
+        @"Category": @"Characters",
+        @"limit": @"1000"
+    };
+    
+    return [[JRRxHttpClient sharedClient] performRequestWithBaseUrl:@"http://gameofthrones.wikia.com/api/v1/Articles/Top" query:queryString transform:^id(NSDictionary *jsonResponse) {
+        __block NSMutableArray *result = [NSMutableArray new];
         
-        RACSignal *successSignal = [self rac_signalForSelector:@selector(downloadCompletedWith:)
-                                                  fromProtocol:@protocol(JRHttpClientDelegate)];
-        
-        [[[successSignal map:^id(RACTuple *value) {
-            return value.first;
-        }] map:jsonResponse]
-         subscribeNext:^(id x) {
-             [subscriber sendNext:x];
-             [subscriber sendCompleted];
-         }];
-        
-        [[JRHttpClient sharedClient] performRequestWith:@"http://gameofthrones.wikia.com/api/v1/Articles/Top"
-                                                  query:query];
-        
-        return [RACDisposable disposableWithBlock:^{
+        [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
+            [result addObject:[[GOTArticle alloc]initWithTitle:object[@"title"]
+                                                      Basepath:jsonResponse[@"basepath"]
+                                                           Url:object[@"url"]
+                                                      Abstract:object[@"abstract"]
+                                                     Thumbnail:object[@"thumbnail"]]];
             
         }];
+        
+        return result;
     }];
 }
 

@@ -4,12 +4,13 @@
 # use_frameworks!
 
 target 'NerdWiki' do
-
-pod 'ReactiveCocoa', '2.1.8'
-
+    
+    pod 'ReactiveCocoa', '2.1.8'
+    pod 'Typhoon', '~> 3.0'
+    
 end
 
 target 'NerdWikiTests' do
-
+    
 end
 

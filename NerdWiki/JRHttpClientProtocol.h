@@ -11,8 +11,8 @@
 
 @protocol JRHttpClientProtocol <NSObject>
 
-+ (instancetype) sharedClient;
++ (instancetype)sharedClient;
 
-- (void)performRequestWith:(NSString *)sUrl query: (NSDictionary *)q;
+- (void)performRequestWith:(NSString *)sUrl query:(NSDictionary *)q;
 
 @end

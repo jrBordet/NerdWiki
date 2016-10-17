@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "GOTArticleServiceProtocol.h"
-#import "JRHttpClientDelegate.h"
+#import "GOTArticleViewModelService.h"
 
-@interface GOTArticleService : NSObject <GOTArticleServiceProtocol, JRHttpClientDelegate>
+@protocol RxHttpClientProtocol;
+
+@interface GOTArticleService : NSObject <GOTArticleServiceProtocol>
+
+@property (nonatomic, strong) id<RxHttpClientProtocol> rxSharedClient;
+@property (nonatomic, strong) NSString *test;
 
 @end

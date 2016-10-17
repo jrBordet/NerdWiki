@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "JRRxHttpClient.h"
 
 @protocol GOTArticleServiceProtocol <NSObject>
 
-- (RACSignal *)fetchTopArticles;
+// Methods
+/**
+ *
+ *
+ *  @return a list of top Characters of GOT
+ */
+- (RACSignal *)fetchTopCharacters;
 
 @end
