@@ -13,4 +13,6 @@
 @optional
 - (void)downloadCompletedWith:(NSDictionary *)data;
 
+- (void)downloadCompletedWithImage:(UIImage *)image;
+
 @end

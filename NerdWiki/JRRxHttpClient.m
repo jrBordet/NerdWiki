@@ -23,6 +23,7 @@
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
+        [[JRHttpClient sharedClient] setDelegate:self];
     }
     return self;
 }
@@ -46,8 +47,6 @@
     @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self)
-        [[JRHttpClient sharedClient] setDelegate:self];
-        
         RACSignal *successSignal = [self rac_signalForSelector:@selector(downloadCompletedWith:)
                                                   fromProtocol:@protocol(JRHttpClientDelegate)];
         
@@ -61,6 +60,30 @@
         
         [[JRHttpClient sharedClient] performRequestWith:baseUrl
                                                   query:query];
+        
+        return [RACDisposable disposableWithBlock:^{
+        }];
+    }];
+}
+
+-(RACSignal *)fetchImageFromUrl:(NSURL *)url placheholderImage:(UIImageView *)placeholderImage {
+    @weakify(self)
+    return  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+       @strongify(self)
+        
+        RACSignal *successSignal = [self rac_signalForSelector:@selector(downloadCompletedWithImage:)
+                                                  fromProtocol:@protocol(JRHttpClientDelegate)];
+        
+        [[successSignal map:^id(RACTuple *value) {
+            return value.first;
+        }]
+         subscribeNext:^(id x) {
+             [subscriber sendNext:x];
+             [subscriber sendCompleted];
+         }];
+        
+        [[JRHttpClient sharedClient] fetchImageFromUrl:url
+                                     placheholderImage:placeholderImage];
         
         return [RACDisposable disposableWithBlock:^{
         }];
