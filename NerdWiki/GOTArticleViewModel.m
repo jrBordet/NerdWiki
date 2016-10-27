@@ -51,9 +51,9 @@
     
     @weakify(self)
     self.executeSearch = [[RACCommand alloc] initWithEnabled:validSearchSignal signalBlock:^RACSignal *(id input) {
-        return [[self.service fetchTopCharacters] doNext:^(id x) {
+        return [[self.service fetchTopCharacters] doNext:^(id result) {
             @strongify(self)
-            self.searchResults = x;
+            self.searchResults = result;
         }];
     }];
 }

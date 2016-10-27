@@ -7,8 +7,6 @@
 //
 
 #import "GOTArticleService.h"
-#import "JRHttpClientDelegate.h"
-#import "JRHttpClient.h"
 #import "ReactiveCocoa/RACEXTScope.h"
 #import "GOTArticle.h"
 
@@ -42,10 +40,10 @@
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
             [result addObject:[[GOTArticle alloc]initWithTitle:object[@"title"]
-                                                      Basepath:jsonResponse[@"basepath"]
-                                                           Url:object[@"url"]
-                                                      Abstract:object[@"abstract"]
-                                                     Thumbnail:object[@"thumbnail"]]];
+                                                      basepath:jsonResponse[@"basepath"]
+                                                           url:object[@"url"]
+                                                      abstract:object[@"abstract"]
+                                                     thumbnail:object[@"thumbnail"]]];
             
         }];
         

@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *thumbnail;
 @property (nonatomic, assign) BOOL favorite;
 
-- (id)initWithTitle: (NSString *)t Basepath: (NSString *)basePath Url: (NSString *)url Abstract: (NSString *)abstract Thumbnail: (NSString *)thumbnail;
+- (id)initWithTitle: (NSString *)t basepath:(NSString *)basePath url:(NSString *)url abstract:(NSString *)abstract thumbnail:(NSString *)thumbnail;
 
 /**
  *  Create the detail Article

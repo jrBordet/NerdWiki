@@ -39,7 +39,7 @@
 
 - (void)bindViewModel {
     [self.viewModel.executeSearch.executing subscribeNext:^(id x) {
-        NSLog(@"[GOTArticleViewController] execute search command");
+        NSLog(@"%@ execute search command", self);
     }];
     
     UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
