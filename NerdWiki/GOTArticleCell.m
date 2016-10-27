@@ -8,6 +8,7 @@
 
 #import "GOTArticleCell.h"
 #import "GOTArticle.h"
+#import "JRRxHttpClient.h"
 
 @implementation GOTArticleCell
 
@@ -27,6 +28,14 @@
     
     self.textLabel.text = article.title;
     self.detailTextLabel.text = article.abstract;
+    
+    if (![article.thumbnail isEqual:[NSNull null]]) {
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+        
+        [[[JRRxHttpClient sharedClient]fetchImageFromUrl:[NSURL URLWithString:article.thumbnail]
+                                       placheholderImage:self.imageView] subscribeCompleted:^{
+        }];
+    }
 }
 
 @end
