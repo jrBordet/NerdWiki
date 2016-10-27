@@ -27,10 +27,10 @@ describe(@"JRRxHttpClientSpec", ^{
             [[[JRRxHttpClient sharedClient] performRequestWithBaseUrl:baseUrl query:queryString transform:^id(NSDictionary *jsonResponse) {
                 [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
                     [result addObject:[[GOTArticle alloc]initWithTitle:object[@"title"]
-                                                              Basepath:jsonResponse[@"basepath"]
-                                                                   Url:object[@"url"]
-                                                              Abstract:object[@"abstract"]
-                                                             Thumbnail:object[@"thumbnail"]]];
+                                                              basepath:jsonResponse[@"basepath"]
+                                                                   url:object[@"url"]
+                                                              abstract:object[@"abstract"]
+                                                             thumbnail:object[@"thumbnail"]]];
                 }];
                 
                 return result;
