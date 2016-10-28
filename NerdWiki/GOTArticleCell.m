@@ -8,12 +8,18 @@
 
 #import "GOTArticleCell.h"
 #import "GOTArticle.h"
+#import "JRRxHttpClient.h"
+
+@interface GOTArticleCell ()
+
+@property (nonatomic, strong) GOTArticle *article;
+
+@end
 
 @implementation GOTArticleCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -24,9 +30,17 @@
 
 - (void)bindViewModel:(id)viewModel {
     GOTArticle *article = viewModel;
+    self.article = article;
     
-    self.textLabel.text = article.title;
-    self.detailTextLabel.text = article.abstract;
+    self.titleLabel.text = article.title;
+    self.subtitleLabel.text = article.abstract;
+    
+    if (![article.thumbnail isEqual:[NSNull null]]) {
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail]
+                                        placheholderImage:self.image] subscribeCompleted:^{
+        }];
+    }
 }
 
 @end

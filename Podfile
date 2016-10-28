@@ -11,6 +11,6 @@ target 'NerdWiki' do
 end
 
 target 'NerdWikiTests' do
-    
+    pod 'Kiwi', '~> 2.3'
 end
 

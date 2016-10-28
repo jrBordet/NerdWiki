@@ -9,6 +9,7 @@
 #import "GOTArticleViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ReactiveCocoa/RACEXTScope.h"
+#import "GOTArticle.h"
 
 @interface GOTArticleViewModel ()
 
@@ -40,22 +41,25 @@
     return self;
 }
 
-- (void)initialize {
-    RACSignal *validSearchSignal = [[RACObserve(self, searchText) map:^id(NSString *text) {
-        return @(text.length > 3);
-    }] distinctUntilChanged];
-    
-    [validSearchSignal subscribeNext:^(id x) {
-        NSLog(@"search text is valid %@", x);
-    }];
-    
+- (RACSignal *)executeSignal {
     @weakify(self)
-    self.executeSearch = [[RACCommand alloc] initWithEnabled:validSearchSignal signalBlock:^RACSignal *(id input) {
-        return [[self.service fetchTopCharacters] doNext:^(id x) {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self)
+        
+        [[self.service fetchTopCharacters] subscribeNext:^(id result) {
             @strongify(self)
-            self.searchResults = x;
+            self.searchResults = result;
+            
+            [subscriber sendNext:result];
+            [subscriber sendCompleted];
+        }];
+        
+        return [RACDisposable disposableWithBlock:^{
         }];
     }];
+}
+
+- (void)initialize {
 }
 
 @end

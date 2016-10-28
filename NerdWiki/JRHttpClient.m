@@ -7,6 +7,7 @@
 //
 
 #import "JRHttpClient.h"
+#import "JRCache.h"
 
 @interface JRHttpClient ()
 
@@ -64,6 +65,46 @@
         }
     }];
     [dataTask resume];
+}
+
+- (void)fetchImageFromUrl:(NSURL *)url {
+    [self fetchImageFromUrl:url placheholderImage:nil];
+}
+
+- (void)fetchImageFromUrl:(NSURL *)url placheholderImage:(UIImageView *)placeholder {
+    NSString *key = url.absoluteString;
+    NSData *data = [JRCache objectForKey:key];
+    
+    if (data) {
+        UIImage *image = [UIImage imageWithData:data];
+        if (placeholder) {
+            placeholder.image = image;
+        }
+    } else {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            
+            UIImage *imageFromData = [UIImage imageWithData:data];
+            
+            [JRCache setObject:UIImagePNGRepresentation(imageFromData)
+                        forKey:key];
+            
+            UIImage *imageToSet = imageFromData;
+            
+            if (imageToSet) {
+                if (self.delegate) {
+                    [self.delegate downloadCompletedWithImage:imageToSet];
+                }
+                
+                if (placeholder) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        placeholder.image = imageFromData;
+                    });
+                }
+            }
+        });
+    }
 }
 
 #pragma mark - internals

@@ -14,5 +14,7 @@
 + (instancetype)sharedClient;
 
 - (void)performRequestWith:(NSString *)sUrl query:(NSDictionary *)q;
+- (void)fetchImageFromUrl: (NSURL *)url placheholderImage:(UIImageView *) placeholder;
+- (void)fetchImageFromUrl: (NSURL *)url;
 
 @end

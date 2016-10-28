@@ -21,12 +21,13 @@
                                    query:(NSDictionary *)query
                                transform:(id (^)(NSDictionary *jsonResponse))response;
 
+-(RACSignal *)fetchImageFromUrl:(NSURL *)url placheholderImage:(UIImageView *)placeholderImage;
+
+
 // Properties
 
 @end
 
 @interface JRRxHttpClient : NSObject <RxHttpClientProtocol, JRHttpClientDelegate>
-
-//- (RACSignal *)performRequestWithBaseUrl:(NSString *)baseUrl query:(NSDictionary *)query transform:(id (^)(NSDictionary *jsonResponse))response;
 
 @end

@@ -29,18 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *go = [[UIBarButtonItem alloc] initWithTitle:@"GO" style:UIBarButtonItemStylePlain target:self action:nil];
-    self.navigationItem.rightBarButtonItem = go;
-    
-    go.rac_command = self.viewModel.executeSearch;
-    
+    [self.navigationController.navigationBar setHidden:YES];
+
     [self bindViewModel];
 }
 
 - (void)bindViewModel {
-    [self.viewModel.executeSearch.executing subscribeNext:^(id x) {
-        NSLog(@"[GOTArticleViewController] execute search command");
-    }];
+    @weakify(self)
     
     UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
     
@@ -49,8 +44,9 @@
                                                 selectionCommand:nil
                                                     templateCell:nib];
     
-    [RACObserve(self.viewModel, self.searchResults) subscribeNext:^(id x) {
-        NSLog(@"");
+    [[self.viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self)
+        [self.tableView reloadData];
     }];
 }
 

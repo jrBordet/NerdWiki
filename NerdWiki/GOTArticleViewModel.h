@@ -14,8 +14,7 @@
 // an Array of GOTArticle
 @property (nonatomic, strong) NSArray *searchResults;
 
-// A command which when executed seaches top hunderd characters of GOT
-@property (nonatomic, strong) RACCommand *executeSearch;
+- (RACSignal *)executeSignal;
 
 - (instancetype)initWithService:(id<GOTArticleServiceProtocol>)service;
 
