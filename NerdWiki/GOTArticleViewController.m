@@ -37,11 +37,6 @@
 - (void)bindViewModel {
     @weakify(self)
     
-    [[self.viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeCompleted:^ {
-        @strongify(self)
-        [self.tableView reloadData];
-    }];
-    
     UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
     
     self.binding = [JRTableViewBinding bindingHelperForTableView:self.tableView
@@ -49,9 +44,9 @@
                                                 selectionCommand:nil
                                                     templateCell:nib];
     
-    [RACObserve(self.viewModel, self.searchResults) subscribeNext:^(id x) {
+    [[self.viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
-        NSLog(@"%@ result", self);
+        [self.tableView reloadData];
     }];
 }
 

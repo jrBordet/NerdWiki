@@ -10,5 +10,8 @@
 #import "JRReactiveView.h"
 
 @interface GOTArticleCell : UITableViewCell <JRReactiveView>
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 
 @end

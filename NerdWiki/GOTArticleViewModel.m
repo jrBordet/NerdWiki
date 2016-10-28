@@ -9,6 +9,7 @@
 #import "GOTArticleViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ReactiveCocoa/RACEXTScope.h"
+#import "GOTArticle.h"
 
 @interface GOTArticleViewModel ()
 
@@ -48,6 +49,8 @@
         [[self.service fetchTopCharacters] subscribeNext:^(id result) {
             @strongify(self)
             self.searchResults = result;
+            
+            [subscriber sendNext:result];
             [subscriber sendCompleted];
         }];
         

@@ -67,13 +67,19 @@
     [dataTask resume];
 }
 
+- (void)fetchImageFromUrl:(NSURL *)url {
+    [self fetchImageFromUrl:url placheholderImage:nil];
+}
+
 - (void)fetchImageFromUrl:(NSURL *)url placheholderImage:(UIImageView *)placeholder {
     NSString *key = url.absoluteString;
     NSData *data = [JRCache objectForKey:key];
     
     if (data) {
         UIImage *image = [UIImage imageWithData:data];
-        placeholder.image = image;
+        if (placeholder) {
+            placeholder.image = image;
+        }
     } else {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
@@ -91,9 +97,11 @@
                     [self.delegate downloadCompletedWithImage:imageToSet];
                 }
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    placeholder.image = imageFromData;
-                });
+                if (placeholder) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        placeholder.image = imageFromData;
+                    });
+                }
             }
         });
     }
