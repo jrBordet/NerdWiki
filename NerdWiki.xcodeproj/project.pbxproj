@@ -68,7 +68,6 @@
 		38C19ED31D576C2200004086 /* GOTArticleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleService.h; sourceTree = "<group>"; };
 		38C19ED41D576C2200004086 /* GOTArticleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleService.m; sourceTree = "<group>"; };
 		38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleServiceProtocol.h; sourceTree = "<group>"; };
-		38D9F75F1D5BBAE000F28E6B /* GOTArticleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleProtocol.h; sourceTree = "<group>"; };
 		38E27B831D5859AD005B3E8F /* GOTArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleViewModel.h; sourceTree = "<group>"; };
 		38E27B841D5859AD005B3E8F /* GOTArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleViewModel.m; sourceTree = "<group>"; };
 		38E27B8D1D585BEF005B3E8F /* GOTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleViewController.h; sourceTree = "<group>"; };
@@ -223,7 +222,6 @@
 				38C19ED31D576C2200004086 /* GOTArticleService.h */,
 				38C19ED41D576C2200004086 /* GOTArticleService.m */,
 				38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */,
-				38D9F75F1D5BBAE000F28E6B /* GOTArticleProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
