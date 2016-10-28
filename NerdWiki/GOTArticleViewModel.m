@@ -40,22 +40,23 @@
     return self;
 }
 
-- (void)initialize {
-    RACSignal *validSearchSignal = [[RACObserve(self, searchText) map:^id(NSString *text) {
-        return @(text.length > 3);
-    }] distinctUntilChanged];
-    
-    [validSearchSignal subscribeNext:^(id x) {
-        NSLog(@"search text is valid %@", x);
-    }];
-    
+- (RACSignal *)executeSignal {
     @weakify(self)
-    self.executeSearch = [[RACCommand alloc] initWithEnabled:validSearchSignal signalBlock:^RACSignal *(id input) {
-        return [[self.service fetchTopCharacters] doNext:^(id result) {
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self)
+        
+        [[self.service fetchTopCharacters] subscribeNext:^(id result) {
             @strongify(self)
             self.searchResults = result;
+            [subscriber sendCompleted];
+        }];
+        
+        return [RACDisposable disposableWithBlock:^{
         }];
     }];
+}
+
+- (void)initialize {
 }
 
 @end
