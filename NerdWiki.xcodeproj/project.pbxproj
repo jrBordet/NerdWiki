@@ -10,7 +10,6 @@
 		382129F91D643E16008332A9 /* GOTSeacrhImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 382129F81D643E16008332A9 /* GOTSeacrhImpl.m */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
-		38B053D31D6585EB002A2183 /* GOTViewModelserviceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
@@ -47,12 +46,9 @@
 		382129F61D643D9E008332A9 /* GOTSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTSearch.h; sourceTree = "<group>"; };
 		382129F71D643E16008332A9 /* GOTSeacrhImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTSeacrhImpl.h; sourceTree = "<group>"; };
 		382129F81D643E16008332A9 /* GOTSeacrhImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTSeacrhImpl.m; sourceTree = "<group>"; };
-		382129FA1D643E91008332A9 /* GOTViewModelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTViewModelService.h; sourceTree = "<group>"; };
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
-		38B053D11D6585EB002A2183 /* GOTViewModelserviceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTViewModelserviceImpl.h; sourceTree = "<group>"; };
-		38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTViewModelserviceImpl.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,9 +241,6 @@
 				38E27B831D5859AD005B3E8F /* GOTArticleViewModel.h */,
 				38E27B841D5859AD005B3E8F /* GOTArticleViewModel.m */,
 				38EED79E1D5C51DB00A12368 /* GOTArticleViewModelService.h */,
-				382129FA1D643E91008332A9 /* GOTViewModelService.h */,
-				38B053D11D6585EB002A2183 /* GOTViewModelserviceImpl.h */,
-				38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -502,7 +495,6 @@
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
 				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
-				38B053D31D6585EB002A2183 /* GOTViewModelserviceImpl.m in Sources */,
 				38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */,
 				38F27FC31D5B01BD00805240 /* GOTArticleCell.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
