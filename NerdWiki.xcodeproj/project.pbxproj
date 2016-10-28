@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		382129F91D643E16008332A9 /* GOTSeacrhImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 382129F81D643E16008332A9 /* GOTSeacrhImpl.m */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
@@ -43,9 +42,6 @@
 /* Begin PBXFileReference section */
 		2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWiki/Pods-NerdWiki.release.xcconfig"; sourceTree = "<group>"; };
 		2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NerdWiki.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		382129F61D643D9E008332A9 /* GOTSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTSearch.h; sourceTree = "<group>"; };
-		382129F71D643E16008332A9 /* GOTSeacrhImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTSeacrhImpl.h; sourceTree = "<group>"; };
-		382129F81D643E16008332A9 /* GOTSeacrhImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTSeacrhImpl.m; sourceTree = "<group>"; };
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
@@ -228,9 +224,6 @@
 				38C19ED41D576C2200004086 /* GOTArticleService.m */,
 				38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */,
 				38D9F75F1D5BBAE000F28E6B /* GOTArticleProtocol.h */,
-				382129F61D643D9E008332A9 /* GOTSearch.h */,
-				382129F71D643E16008332A9 /* GOTSeacrhImpl.h */,
-				382129F81D643E16008332A9 /* GOTSeacrhImpl.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -490,7 +483,6 @@
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
 				38C19ED51D576C2200004086 /* GOTArticleService.m in Sources */,
 				388983191DBDDF39002C5C3D /* JRCache.m in Sources */,
-				382129F91D643E16008332A9 /* GOTSeacrhImpl.m in Sources */,
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
