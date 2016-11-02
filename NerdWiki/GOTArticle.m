@@ -51,4 +51,8 @@
     return url;
 }
 
+- (NSString *)url {
+    return [NSString stringWithFormat:@"%@%@", _basepath, _url];
+}
+
 @end

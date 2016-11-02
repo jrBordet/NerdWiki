@@ -8,6 +8,8 @@
 
 #import "GOTArticleViewController.h"
 #import "JRTableViewBinding.h"
+#import "GOTArticle.h"
+#import "GOTArticleDetailViewController.h"
 
 @interface GOTArticleViewController ()
 
@@ -26,11 +28,17 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setToolbarHidden:YES animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.navigationController.navigationBar setHidden:YES];
-
+    
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
     [self bindViewModel];
 }
 
@@ -39,9 +47,17 @@
     
     UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
     
+    RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(GOTArticle *article) {
+        @strongify(self)
+        GOTArticleDetailViewController *detail = [[GOTArticleDetailViewController alloc] initWithArticle:article];
+        
+        [self.navigationController pushViewController:detail animated:YES];
+        return [RACSignal empty];
+    }];
+    
     self.binding = [JRTableViewBinding bindingHelperForTableView:self.tableView
                                                     sourceSignal:RACObserve(self.viewModel, self.searchResults)
-                                                selectionCommand:nil
+                                                selectionCommand:selectionCommand
                                                     templateCell:nib];
     
     [[self.viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
