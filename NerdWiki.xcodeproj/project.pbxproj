@@ -11,6 +11,8 @@
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
 		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
+		38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */; };
+		38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */; };
 		38B053D31D6585EB002A2183 /* GOTViewModelserviceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
@@ -54,6 +56,9 @@
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
 		38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Geometry.h"; sourceTree = "<group>"; };
 		38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Geometry.m"; sourceTree = "<group>"; };
+		38A22FC61DC9D397001CCCFE /* GOTArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleDetailViewController.h; sourceTree = "<group>"; };
+		38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleDetailViewController.m; sourceTree = "<group>"; };
+		38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GOTArticleDetailViewController.xib; sourceTree = "<group>"; };
 		38B053D11D6585EB002A2183 /* GOTViewModelserviceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTViewModelserviceImpl.h; sourceTree = "<group>"; };
 		38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTViewModelserviceImpl.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
@@ -137,6 +142,16 @@
 				388983181DBDDF39002C5C3D /* JRCache.m */,
 			);
 			name = Cache;
+			sourceTree = "<group>";
+		};
+		38A22FCB1DC9D39F001CCCFE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				38A22FC61DC9D397001CCCFE /* GOTArticleDetailViewController.h */,
+				38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */,
+				38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		38B9F5661D925AF9004B97B4 /* Assembly */ = {
@@ -275,6 +290,7 @@
 				38F27FC01D5B01BD00805240 /* GOTArticleCell.h */,
 				38F27FC11D5B01BD00805240 /* GOTArticleCell.m */,
 				38F27FC21D5B01BD00805240 /* GOTArticleCell.xib */,
+				38A22FCB1DC9D39F001CCCFE /* Detail */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -385,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
 				38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */,
 			);
@@ -505,6 +522,7 @@
 				382129F91D643E16008332A9 /* GOTSeacrhImpl.m in Sources */,
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
+				38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
 				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
 				38B053D31D6585EB002A2183 /* GOTViewModelserviceImpl.m in Sources */,
