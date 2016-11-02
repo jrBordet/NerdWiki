@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
-		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
-		38B053D31D6585EB002A2183 /* GOTViewModelserviceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
@@ -47,10 +45,6 @@
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
-		38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Geometry.h"; sourceTree = "<group>"; };
-		38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Geometry.m"; sourceTree = "<group>"; };
-		38B053D11D6585EB002A2183 /* GOTViewModelserviceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTViewModelserviceImpl.h; sourceTree = "<group>"; };
-		38B053D21D6585EB002A2183 /* GOTViewModelserviceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTViewModelserviceImpl.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +139,6 @@
 		38C19E951D57699800004086 = {
 			isa = PBXGroup;
 			children = (
-				38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */,
-				38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */,
 				38C19EA01D57699800004086 /* NerdWiki */,
 				38C19EBD1D57699800004086 /* NerdWikiTests */,
 				38C19E9F1D57699800004086 /* Products */,
@@ -496,7 +488,6 @@
 				38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */,
 				38F27FC31D5B01BD00805240 /* GOTArticleCell.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
-				38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */,
 				38C19ED11D576BC900004086 /* GOTArticle.m in Sources */,
 				38E27B851D5859AD005B3E8F /* GOTArticleViewModel.m in Sources */,
 			);

@@ -9,6 +9,7 @@
 #import "GOTArticleCell.h"
 #import "GOTArticle.h"
 #import "JRRxHttpClient.h"
+#import "UIImageView+Geometry.h"
 
 @interface GOTArticleCell ()
 
@@ -29,6 +30,7 @@
 }
 
 - (void)bindViewModel:(id)viewModel {
+    @weakify(self)
     GOTArticle *article = viewModel;
     self.article = article;
     
@@ -37,8 +39,11 @@
     
     if (![article.thumbnail isEqual:[NSNull null]]) {
         self.imageView.contentMode = UIViewContentModeScaleToFill;
-        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail]
-                                        placheholderImage:self.image] subscribeCompleted:^{
+        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail] placheholderImage:self.image] subscribeCompleted:^{
+            @strongify(self)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.image rounded];
+            });
         }];
     }
 }
