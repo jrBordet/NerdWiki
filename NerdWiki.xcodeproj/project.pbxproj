@@ -12,6 +12,9 @@
 		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
 		38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */; };
 		38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */; };
+		38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD11DCA0900001CCCFE /* WikiArticle.m */; };
+		38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD61DCA0970001CCCFE /* WikiViewController.m */; };
+		38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
@@ -53,6 +56,12 @@
 		38A22FC61DC9D397001CCCFE /* GOTArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleDetailViewController.h; sourceTree = "<group>"; };
 		38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleDetailViewController.m; sourceTree = "<group>"; };
 		38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GOTArticleDetailViewController.xib; sourceTree = "<group>"; };
+		38A22FD01DCA0900001CCCFE /* WikiArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticle.h; sourceTree = "<group>"; };
+		38A22FD11DCA0900001CCCFE /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
+		38A22FD51DCA0970001CCCFE /* WikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewController.h; sourceTree = "<group>"; };
+		38A22FD61DCA0970001CCCFE /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
+		38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCollectionViewBinding.h; sourceTree = "<group>"; };
+		38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCollectionViewBinding.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +153,33 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
+		38A22FD31DCA0905001CCCFE /* Wiki */ = {
+			isa = PBXGroup;
+			children = (
+				38A22FD41DCA0932001CCCFE /* Model */,
+				38A22FD81DCA097C001CCCFE /* View */,
+			);
+			name = Wiki;
+			sourceTree = "<group>";
+		};
+		38A22FD41DCA0932001CCCFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38A22FD01DCA0900001CCCFE /* WikiArticle.h */,
+				38A22FD11DCA0900001CCCFE /* WikiArticle.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38A22FD81DCA097C001CCCFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38A22FD51DCA0970001CCCFE /* WikiViewController.h */,
+				38A22FD61DCA0970001CCCFE /* WikiViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		38B9F5661D925AF9004B97B4 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +226,7 @@
 				38C19EAD1D57699800004086 /* NerdWiki.xcdatamodeld */,
 				38C19EA11D57699800004086 /* Supporting Files */,
 				38C19ED21D576BF400004086 /* GOTArticle */,
+				38A22FD31DCA0905001CCCFE /* Wiki */,
 			);
 			path = NerdWiki;
 			sourceTree = "<group>";
@@ -257,6 +294,8 @@
 		38E27B921D5860F6005B3E8F /* UIUtil */ = {
 			isa = PBXGroup;
 			children = (
+				38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */,
+				38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */,
 				38E27B931D58611E005B3E8F /* JRReactiveView.h */,
 				38E27B941D58615A005B3E8F /* JRTableViewBinding.h */,
 				38E27B951D58615A005B3E8F /* JRTableViewBinding.m */,
@@ -496,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
 				38C19EA91D57699800004086 /* ViewController.m in Sources */,
 				38E27B8F1D585BEF005B3E8F /* GOTArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
@@ -503,6 +543,8 @@
 				388983191DBDDF39002C5C3D /* JRCache.m in Sources */,
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
+				38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */,
+				38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */,
 				38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
 				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
