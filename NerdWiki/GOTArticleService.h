@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "GOTArticleServiceProtocol.h"
-#import "GOTArticleViewModelService.h"
 
 @protocol RxHttpClientProtocol;
 
