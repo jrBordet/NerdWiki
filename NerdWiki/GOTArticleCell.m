@@ -9,6 +9,7 @@
 #import "GOTArticleCell.h"
 #import "GOTArticle.h"
 #import "JRRxHttpClient.h"
+#import "UIImageView+Geometry.h"
 
 @interface GOTArticleCell ()
 
@@ -41,9 +42,7 @@
         [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail] placheholderImage:self.image] subscribeCompleted:^{
             @strongify(self)
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.image.layer.cornerRadius = self.image.frame.size.height / 2;
-                self.image.layer.masksToBounds = YES;
-                self.image.layer.borderWidth = 0;
+                [self.image rounded];
             });
         }];
     }
