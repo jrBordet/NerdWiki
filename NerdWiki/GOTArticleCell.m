@@ -29,6 +29,7 @@
 }
 
 - (void)bindViewModel:(id)viewModel {
+    @weakify(self)
     GOTArticle *article = viewModel;
     self.article = article;
     
@@ -37,8 +38,13 @@
     
     if (![article.thumbnail isEqual:[NSNull null]]) {
         self.imageView.contentMode = UIViewContentModeScaleToFill;
-        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail]
-                                        placheholderImage:self.image] subscribeCompleted:^{
+        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.thumbnail] placheholderImage:self.image] subscribeCompleted:^{
+            @strongify(self)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.image.layer.cornerRadius = self.image.frame.size.height / 2;
+                self.image.layer.masksToBounds = YES;
+                self.image.layer.borderWidth = 0;
+            });
         }];
     }
 }
