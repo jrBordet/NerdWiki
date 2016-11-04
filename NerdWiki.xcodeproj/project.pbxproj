@@ -15,6 +15,8 @@
 		38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD11DCA0900001CCCFE /* WikiArticle.m */; };
 		38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD61DCA0970001CCCFE /* WikiViewController.m */; };
 		38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */; };
+		38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDD1DCA2143001CCCFE /* WikiCell.m */; };
+		38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FDE1DCA2143001CCCFE /* WikiCell.xib */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
@@ -62,6 +64,9 @@
 		38A22FD61DCA0970001CCCFE /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
 		38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCollectionViewBinding.h; sourceTree = "<group>"; };
 		38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCollectionViewBinding.m; sourceTree = "<group>"; };
+		38A22FDC1DCA2143001CCCFE /* WikiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCell.h; sourceTree = "<group>"; };
+		38A22FDD1DCA2143001CCCFE /* WikiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCell.m; sourceTree = "<group>"; };
+		38A22FDE1DCA2143001CCCFE /* WikiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiCell.xib; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +181,9 @@
 			children = (
 				38A22FD51DCA0970001CCCFE /* WikiViewController.h */,
 				38A22FD61DCA0970001CCCFE /* WikiViewController.m */,
+				38A22FDC1DCA2143001CCCFE /* WikiCell.h */,
+				38A22FDD1DCA2143001CCCFE /* WikiCell.m */,
+				38A22FDE1DCA2143001CCCFE /* WikiCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -423,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */,
+				38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
 				38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */,
 			);
@@ -536,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
+				38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */,
 				38C19EA91D57699800004086 /* ViewController.m in Sources */,
 				38E27B8F1D585BEF005B3E8F /* GOTArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,

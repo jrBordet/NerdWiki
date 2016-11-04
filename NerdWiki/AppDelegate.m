@@ -10,6 +10,7 @@
 #import "GOTArticleService.h"
 #import "GOTArticleViewModel.h"
 #import "GOTArticleViewController.h"
+#import "WikiViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,8 +29,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     // create and navigate to a view controller
-    UIViewController *viewController = [self createInitialViewController];
-    [self.navigationController pushViewController:viewController animated:NO];
+//    UIViewController *viewController = [self createInitialViewController];
+    [self.navigationController pushViewController:[self createInitialCollection] animated:NO];
     
     // show the navigation controller
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -44,8 +45,11 @@
     self.viewModel = [[GOTArticleViewModel alloc] initWithService:self.viewModelServices];
     
     //self.viewModel = [GOTArticleViewModel new];
-    
     return [[GOTArticleViewController alloc] initWithViewModel:self.viewModel];
+}
+
+- (UICollectionViewController *)createInitialCollection {
+    return [WikiViewController new];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

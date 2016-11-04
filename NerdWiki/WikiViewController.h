@@ -1,5 +1,5 @@
 //
-//  WikiCollectionViewCollectionViewController.h
+//  WikiViewController.h
 //  NerdWiki
 //
 //  Created by Jean Raphael Bordet on 02/11/2016.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WikiViewController : UICollectionViewController
+@interface WikiViewController : UIViewController
 
 @end
