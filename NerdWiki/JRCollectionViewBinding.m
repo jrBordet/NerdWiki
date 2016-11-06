@@ -14,6 +14,7 @@
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) UICollectionViewCell *templateCell;
+@property (nonatomic, strong) RACCommand *selection;
 
 @end
 
@@ -45,6 +46,8 @@
         _collectionView = collectionView;
 
         _data = [NSArray array];
+        
+        _selection = selection;
         
         [source subscribeNext:^(id x) {
             self.data = x;
@@ -80,6 +83,16 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
+}
+
+#pragma mark - UICollectionViewDelegate methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.selection execute: self.data[indexPath.row]];
+    
+    if ([self.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
+        [self.delegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    }
 }
 
 @end
