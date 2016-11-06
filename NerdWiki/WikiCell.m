@@ -15,26 +15,21 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)bindViewModel:(id)viewModel {
     @weakify(self)
-    
     WikiArticle *article = viewModel;
     
     self.testLabel.text = article.title;
     
     if (![article.url isEqual:[NSNull null]]) {
         self.thumbnailImage.contentMode = UIViewContentModeScaleToFill;
-        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.url] placheholderImage:self.thumbnailImage] subscribeCompleted:^{
+        [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.wordmark] placheholderImage:self.thumbnailImage] subscribeCompleted:^{
             @strongify(self)
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.thumbnailImage rounded];
-            });
+            NSLog(@"");
         }];
     }
-    
 }
 
 @end

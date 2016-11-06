@@ -11,12 +11,18 @@
 #import "GOTArticleViewModel.h"
 #import "GOTArticleViewController.h"
 #import "WikiViewController.h"
+#import "WikiViewController.h"
+#import "WikiViewModel.h"
+#import "WikiService.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, strong) GOTArticleViewModel *viewModel;
 @property (nonatomic, strong) GOTArticleService *viewModelServices;
+
+@property (nonatomic, strong) WikiViewModel *wikiViewModel;
+@property (nonatomic, strong) WikiService *wikiServices;
 
 @end
 
@@ -29,8 +35,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     // create and navigate to a view controller
-//    UIViewController *viewController = [self createInitialViewController];
-    [self.navigationController pushViewController:[self createInitialCollection] animated:NO];
+    [self.navigationController pushViewController:[self createWikiViewController] animated:NO];
     
     // show the navigation controller
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -40,7 +45,7 @@
     return YES;
 }
 
-- (UIViewController *)createInitialViewController {
+- (UIViewController *)createGOTArticleViewController {
     self.viewModelServices = [[GOTArticleService alloc] init];
     self.viewModel = [[GOTArticleViewModel alloc] initWithService:self.viewModelServices];
     
@@ -48,8 +53,11 @@
     return [[GOTArticleViewController alloc] initWithViewModel:self.viewModel];
 }
 
-- (UICollectionViewController *)createInitialCollection {
-    return [WikiViewController new];
+- (UIViewController *)createWikiViewController {
+    self.wikiServices = [WikiService new];
+    self.wikiViewModel = [[WikiViewModel alloc] initWithService:self.wikiServices];
+    
+    return [[WikiViewController alloc] initWithViewModel:self.wikiViewModel];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
