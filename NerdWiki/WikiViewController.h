@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WikiViewModel.h"
 
-@interface WikiViewController : UIViewController
+@interface WikiViewController : UITableViewController
 
 - (instancetype)initWithViewModel:(WikiViewModel *)viewModel;
 

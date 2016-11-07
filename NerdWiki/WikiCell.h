@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "JRReactiveView.h"
 
-@interface WikiCell : UICollectionViewCell <JRReactiveView>
+@interface WikiCell : UITableViewCell <JRReactiveView>
 
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
 
 @end

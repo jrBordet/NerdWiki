@@ -18,15 +18,11 @@
 }
 
 - (void)bindViewModel:(id)viewModel {
-    @weakify(self)
     WikiArticle *article = viewModel;
-    
-    self.testLabel.text = article.title;
-    
+        
     if (![article.url isEqual:[NSNull null]]) {
         self.thumbnailImage.contentMode = UIViewContentModeScaleToFill;
         [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.wordmark] placheholderImage:self.thumbnailImage] subscribeCompleted:^{
-            @strongify(self)
             NSLog(@"");
         }];
     }
