@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3875412E1DD30820005C0421 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3875412D1DD30820005C0421 /* placeholder.png */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
 		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWiki/Pods-NerdWiki.release.xcconfig"; sourceTree = "<group>"; };
 		2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NerdWiki.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3875412D1DD30820005C0421 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
@@ -175,8 +177,7 @@
 				38A22FD41DCA0932001CCCFE /* Model */,
 				38A22FD81DCA097C001CCCFE /* View */,
 				38B64EEF1DCF857900BADEB7 /* Service */,
-				38B64EF31DCF903300BADEB7 /* WikiViewModel.h */,
-				38B64EF41DCF903300BADEB7 /* WikiViewModel.m */,
+				38B560151DD05C6F00124501 /* ViewModel */,
 			);
 			name = Wiki;
 			sourceTree = "<group>";
@@ -200,6 +201,15 @@
 				38A22FDE1DCA2143001CCCFE /* WikiCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		38B560151DD05C6F00124501 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38B64EF31DCF903300BADEB7 /* WikiViewModel.h */,
+				38B64EF41DCF903300BADEB7 /* WikiViewModel.m */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		38B64EEB1DCF854200BADEB7 /* Service */ = {
@@ -234,6 +244,7 @@
 		38C19E951D57699800004086 = {
 			isa = PBXGroup;
 			children = (
+				3875412D1DD30820005C0421 /* placeholder.png */,
 				38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */,
 				38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */,
 				38C19EA01D57699800004086 /* NerdWiki */,
@@ -433,6 +444,7 @@
 				TargetAttributes = {
 					38C19E9D1D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XP6P798NUV;
 					};
 					38C19EB91D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -467,6 +479,7 @@
 				38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */,
 				38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
+				3875412E1DD30820005C0421 /* placeholder.png in Resources */,
 				38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +727,7 @@
 			baseConfigurationReference = FAA5BAE426D53DD720F451D8 /* Pods-NerdWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -727,6 +741,7 @@
 			baseConfigurationReference = 2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
