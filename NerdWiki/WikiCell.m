@@ -13,19 +13,48 @@
 
 @implementation WikiCell
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.thumbnailImage.image = [[UIImage alloc] initWithContentsOfFile:@"placeholder.png"];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:[UIDevice currentDevice]];
 }
 
 - (void)bindViewModel:(id)viewModel {
     WikiArticle *article = viewModel;
-        
-    if (![article.url isEqual:[NSNull null]]) {
-        self.thumbnailImage.contentMode = UIViewContentModeScaleToFill;
+    
+    if (![article.url isEqual:[NSNull null]]) {        
         [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.wordmark] placheholderImage:self.thumbnailImage] subscribeCompleted:^{
-            NSLog(@"");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.thumbnailImage centerWithSize:self.contentView.bounds.size];
+                
+                [self needsUpdateConstraints];
+                [self updateConstraints];
+            });
         }];
     }
+}
+
+- (void)orientationChanged:(NSNotification *)note {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.thumbnailImage centerWithSize:self.contentView.bounds.size];
+        
+        [self needsUpdateConstraints];
+        [self updateConstraints];
+    });
 }
 
 @end
