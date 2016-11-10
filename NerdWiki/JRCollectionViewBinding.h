@@ -12,16 +12,13 @@
 
 @interface JRCollectionViewBinding : NSObject
 
-@property (nonatomic, weak) id<UICollectionViewDelegate> delegate;
+@property (nonatomic, weak) id<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource> delegate;
 
 + (instancetype)bindingHelperForCollectionView:(UICollectionView *)collectionView
+                                         frame:(CGRect)frame
                                   sourceSignal:(RACSignal *)source
                               selectionCommand:(RACCommand *)selection
-                                  templateCell:(UINib *)templateCellNib;
-
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView
-                          sourceSignal:(RACSignal *)source
-                      selectionCommand:(RACCommand *)selection
-                          templateCell:(UINib *)templateCellNib;
+                                  templateCell:(UINib *)templateCellNib
+                               scrollDirection:(UICollectionViewScrollDirection)scrollDirection;
 
 @end

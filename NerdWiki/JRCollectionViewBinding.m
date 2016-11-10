@@ -14,30 +14,40 @@
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) UICollectionViewCell *templateCell;
+@property (nonatomic, strong) RACCommand *selection;
 
 @end
 
 @implementation JRCollectionViewBinding
 
 + (instancetype)bindingHelperForCollectionView:(UICollectionView *)collectionView
-                             sourceSignal:(RACSignal *)source
-                         selectionCommand:(RACCommand *)selection
-                             templateCell:(UINib *)templateCellNib {
+                                         frame:(CGRect)frame
+                                  sourceSignal:(RACSignal *)source
+                              selectionCommand:(RACCommand *)selection
+                                  templateCell:(UINib *)templateCellNib
+                               scrollDirection:(UICollectionViewScrollDirection)scrollDirection {
     
     return [[JRCollectionViewBinding alloc] initWithCollectionView:collectionView
-                                            sourceSignal:source
-                                        selectionCommand:selection
-                                            templateCell:templateCellNib];
+                                                             frame:frame
+                                                      sourceSignal:source
+                                                  selectionCommand:selection
+                                                      templateCell:templateCellNib
+                                                   scrollDirection:scrollDirection];
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView
-                     sourceSignal:(RACSignal *)source
-                 selectionCommand:(RACCommand *)selection
-                     templateCell:(UINib *)templateCellNib {
+                                 frame:(CGRect)frame
+                          sourceSignal:(RACSignal *)source
+                      selectionCommand:(RACCommand *)selection
+                          templateCell:(UINib *)templateCellNib
+                       scrollDirection:(UICollectionViewScrollDirection)scrollDirection{
     
     if (self = [super init]) {
         _collectionView = collectionView;
+
         _data = [NSArray array];
+        
+        _selection = selection;
         
         [source subscribeNext:^(id x) {
             self.data = x;
@@ -45,13 +55,9 @@
         }];
         
         _templateCell = [[templateCellNib instantiateWithOwner:nil options:nil] firstObject];
-        [collectionView registerNib:templateCellNib forCellWithReuseIdentifier:_templateCell.reuseIdentifier];
         
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        [flowLayout setItemSize:CGSizeMake(200, 200)];
-        [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-        
-        [_collectionView setCollectionViewLayout:flowLayout];
+        [collectionView registerNib:templateCellNib
+         forCellWithReuseIdentifier:_templateCell.reuseIdentifier];
         
         collectionView.dataSource = self;
         collectionView.delegate = self;
@@ -73,6 +79,20 @@
     [cell bindViewModel:self.data[indexPath.row]];
     
     return (UICollectionViewCell *)cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+#pragma mark - UICollectionViewDelegate methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.selection execute: self.data[indexPath.row]];
+    
+    if ([self.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
+        [self.delegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    }
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3875412E1DD30820005C0421 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3875412D1DD30820005C0421 /* placeholder.png */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
 		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
@@ -15,6 +16,12 @@
 		38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD11DCA0900001CCCFE /* WikiArticle.m */; };
 		38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD61DCA0970001CCCFE /* WikiViewController.m */; };
 		38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */; };
+		38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDD1DCA2143001CCCFE /* WikiCell.m */; };
+		38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FDE1DCA2143001CCCFE /* WikiCell.xib */; };
+		38B64EEE1DCF857500BADEB7 /* WikiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B64EED1DCF857500BADEB7 /* WikiService.m */; };
+		38B64EF21DCF887E00BADEB7 /* WikiServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B64EF11DCF887E00BADEB7 /* WikiServiceSpec.m */; };
+		38B64EF51DCF903300BADEB7 /* WikiViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B64EF41DCF903300BADEB7 /* WikiViewModel.m */; };
+		38B64EF71DCF914C00BADEB7 /* WikiViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B64EF61DCF914C00BADEB7 /* WikiViewModelSpec.m */; };
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
@@ -48,6 +55,7 @@
 /* Begin PBXFileReference section */
 		2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWiki/Pods-NerdWiki.release.xcconfig"; sourceTree = "<group>"; };
 		2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NerdWiki.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3875412D1DD30820005C0421 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
@@ -62,6 +70,16 @@
 		38A22FD61DCA0970001CCCFE /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
 		38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCollectionViewBinding.h; sourceTree = "<group>"; };
 		38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCollectionViewBinding.m; sourceTree = "<group>"; };
+		38A22FDC1DCA2143001CCCFE /* WikiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCell.h; sourceTree = "<group>"; };
+		38A22FDD1DCA2143001CCCFE /* WikiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCell.m; sourceTree = "<group>"; };
+		38A22FDE1DCA2143001CCCFE /* WikiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiCell.xib; sourceTree = "<group>"; };
+		38B64EEC1DCF857500BADEB7 /* WikiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiService.h; sourceTree = "<group>"; };
+		38B64EED1DCF857500BADEB7 /* WikiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiService.m; sourceTree = "<group>"; };
+		38B64EF01DCF859000BADEB7 /* WikiServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiServiceProtocol.h; sourceTree = "<group>"; };
+		38B64EF11DCF887E00BADEB7 /* WikiServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiServiceSpec.m; sourceTree = "<group>"; };
+		38B64EF31DCF903300BADEB7 /* WikiViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewModel.h; sourceTree = "<group>"; };
+		38B64EF41DCF903300BADEB7 /* WikiViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewModel.m; sourceTree = "<group>"; };
+		38B64EF61DCF914C00BADEB7 /* WikiViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewModelSpec.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +176,8 @@
 			children = (
 				38A22FD41DCA0932001CCCFE /* Model */,
 				38A22FD81DCA097C001CCCFE /* View */,
+				38B64EEF1DCF857900BADEB7 /* Service */,
+				38B560151DD05C6F00124501 /* ViewModel */,
 			);
 			name = Wiki;
 			sourceTree = "<group>";
@@ -176,8 +196,40 @@
 			children = (
 				38A22FD51DCA0970001CCCFE /* WikiViewController.h */,
 				38A22FD61DCA0970001CCCFE /* WikiViewController.m */,
+				38A22FDC1DCA2143001CCCFE /* WikiCell.h */,
+				38A22FDD1DCA2143001CCCFE /* WikiCell.m */,
+				38A22FDE1DCA2143001CCCFE /* WikiCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		38B560151DD05C6F00124501 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38B64EF31DCF903300BADEB7 /* WikiViewModel.h */,
+				38B64EF41DCF903300BADEB7 /* WikiViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		38B64EEB1DCF854200BADEB7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				38C19ED31D576C2200004086 /* GOTArticleService.h */,
+				38C19ED41D576C2200004086 /* GOTArticleService.m */,
+				38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		38B64EEF1DCF857900BADEB7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				38B64EEC1DCF857500BADEB7 /* WikiService.h */,
+				38B64EED1DCF857500BADEB7 /* WikiService.m */,
+				38B64EF01DCF859000BADEB7 /* WikiServiceProtocol.h */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		38B9F5661D925AF9004B97B4 /* Assembly */ = {
@@ -192,6 +244,7 @@
 		38C19E951D57699800004086 = {
 			isa = PBXGroup;
 			children = (
+				3875412D1DD30820005C0421 /* placeholder.png */,
 				38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */,
 				38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */,
 				38C19EA01D57699800004086 /* NerdWiki */,
@@ -245,6 +298,8 @@
 				38C19EBE1D57699800004086 /* NerdWikiTests.m */,
 				38C19EC01D57699800004086 /* Info.plist */,
 				388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */,
+				38B64EF11DCF887E00BADEB7 /* WikiServiceSpec.m */,
+				38B64EF61DCF914C00BADEB7 /* WikiViewModelSpec.m */,
 			);
 			path = NerdWikiTests;
 			sourceTree = "<group>";
@@ -263,6 +318,7 @@
 		38C19ED21D576BF400004086 /* GOTArticle */ = {
 			isa = PBXGroup;
 			children = (
+				38B64EEB1DCF854200BADEB7 /* Service */,
 				38EBC4A31D58B34C003E78EC /* View */,
 				38E27B821D585995005B3E8F /* Model */,
 				38E27B861D585B52005B3E8F /* ViewModel */,
@@ -275,9 +331,6 @@
 			children = (
 				38C19ECF1D576BC900004086 /* GOTArticle.h */,
 				38C19ED01D576BC900004086 /* GOTArticle.m */,
-				38C19ED31D576C2200004086 /* GOTArticleService.h */,
-				38C19ED41D576C2200004086 /* GOTArticleService.m */,
-				38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -391,6 +444,7 @@
 				TargetAttributes = {
 					38C19E9D1D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XP6P798NUV;
 					};
 					38C19EB91D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -423,7 +477,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */,
+				38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
+				3875412E1DD30820005C0421 /* placeholder.png in Resources */,
 				38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,10 +592,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
+				38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */,
 				38C19EA91D57699800004086 /* ViewController.m in Sources */,
 				38E27B8F1D585BEF005B3E8F /* GOTArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
 				38C19ED51D576C2200004086 /* GOTArticleService.m in Sources */,
+				38B64EF51DCF903300BADEB7 /* WikiViewModel.m in Sources */,
 				388983191DBDDF39002C5C3D /* JRCache.m in Sources */,
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
@@ -552,6 +610,7 @@
 				38F27FC31D5B01BD00805240 /* GOTArticleCell.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
 				38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */,
+				38B64EEE1DCF857500BADEB7 /* WikiService.m in Sources */,
 				38C19ED11D576BC900004086 /* GOTArticle.m in Sources */,
 				38E27B851D5859AD005B3E8F /* GOTArticleViewModel.m in Sources */,
 			);
@@ -561,6 +620,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B64EF21DCF887E00BADEB7 /* WikiServiceSpec.m in Sources */,
+				38B64EF71DCF914C00BADEB7 /* WikiViewModelSpec.m in Sources */,
 				388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */,
 				38C19EBF1D57699800004086 /* NerdWikiTests.m in Sources */,
 			);
@@ -666,6 +727,7 @@
 			baseConfigurationReference = FAA5BAE426D53DD720F451D8 /* Pods-NerdWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -679,6 +741,7 @@
 			baseConfigurationReference = 2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

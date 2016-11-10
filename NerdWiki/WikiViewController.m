@@ -1,5 +1,5 @@
 //
-//  WikiCollectionViewCollectionViewController.m
+//  WikiViewController.m
 //  NerdWiki
 //
 //  Created by Jean Raphael Bordet on 02/11/2016.
@@ -9,27 +9,63 @@
 #import "WikiViewController.h"
 #import "JRCollectionViewBinding.h"
 #import "GOTArticle.h"
+#import "GOTArticleDetailViewController.h"
+#import "ReactiveCocoa/RACEXTScope.h"
+#import "JRTableViewBinding.h"
 
 @interface WikiViewController ()
 
-@property (nonatomic, strong) JRCollectionViewBinding *binding;
+@property (nonatomic, strong) JRTableViewBinding *binding;
 @property (nonatomic, strong) NSMutableArray *searchResults;
+@property (nonatomic, strong) RACCommand *selectionCommand;
 
 @end
 
-@implementation WikiViewController
+@implementation WikiViewController {
+    UICollectionView *_collectionView;
+    WikiViewModel *_viewModel;
+}
+
+- (instancetype)initWithViewModel:(WikiViewModel *)viewModel {
+    self = [super init];
+    if (self) {
+        _viewModel = viewModel;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationController.navigationBarHidden = YES;
     
-    // Register cell classes
-    //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
     [self bindViewModel];
+}
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _searchResults = [NSMutableArray new];
+    }
+    
+    return self;
+}
+
+- (RACCommand *)selectionCommand {
+    @weakify(self)
+    
+    if (!_selectionCommand) {
+        @strongify(self)
+        _selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(GOTArticle *article) {
+            GOTArticleDetailViewController *detail = [[GOTArticleDetailViewController alloc] initWithArticle:article];
+            
+            [self.navigationController pushViewController:detail animated:YES];
+            return [RACSignal empty];
+        }];
+    }
+    
+    return _selectionCommand;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,77 +74,51 @@
 }
 
 - (void)bindViewModel {
-    UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
+    @weakify(self)
     
-    self.binding = [JRCollectionViewBinding bindingHelperForCollectionView:self.collectionView sourceSignal:RACObserve(self, searchResults)
-                                                          selectionCommand:nil
-                                                              templateCell:nib];
-    for (int i=0; i < 10; i++) {
-        GOTArticle *article = [[GOTArticle alloc] initWithTitle:[NSString stringWithFormat:@"title %i", i] basepath:@"" url:@"" abstract:@"" thumbnail:@""];
-        [self.searchResults addObject:article];
-    }
+    //[self createCollectionView];
+    
+    [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self)
+
+        self.searchResults = x;
+    }];
+    
+    UINib *nib = [UINib nibWithNibName:@"WikiCell" bundle:nil];
+    
+//    self.binding = [JRCollectionViewBinding bindingHelperForCollectionView:_collectionView
+//                                                                     frame:self.view.frame
+//                                                              sourceSignal:RACObserve(self, searchResults)
+//                                                          selectionCommand:self.selectionCommand
+//                                                              templateCell:nib
+//                                                           scrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    self.binding = [JRTableViewBinding bindingHelperForTableView:self.tableView
+                                                    sourceSignal:RACObserve(self, searchResults)
+                                                selectionCommand:self.selectionCommand
+                                                    templateCell:nib];
+    
+    [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        [self.tableView reloadData];
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)createCollectionView {
+    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UICollectionViewFlowLayout *layout= [UICollectionViewFlowLayout new];
+    
+    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [layout setItemSize:CGSizeMake(200, 147)];
+    [layout setMinimumLineSpacing:0];
+    [layout setMinimumInteritemSpacing:0];
+    
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
+                                         collectionViewLayout:layout];
+    
+    _collectionView.backgroundColor = [UIColor blackColor];
+    
+    [self.view addSubview:_collectionView];
 }
-*/
-
-#pragma mark <UICollectionViewDataSource>
-
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of items
-//    return 0;
-//}
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell
-//    
-//    return cell;
-//}
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

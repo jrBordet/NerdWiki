@@ -1,5 +1,5 @@
 //
-//  WikiViewController.h
+//  WikiCell.h
 //  NerdWiki
 //
 //  Created by Jean Raphael Bordet on 02/11/2016.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WikiViewModel.h"
+#import "JRReactiveView.h"
 
-@interface WikiViewController : UITableViewController
+@interface WikiCell : UITableViewCell <JRReactiveView>
 
-- (instancetype)initWithViewModel:(WikiViewModel *)viewModel;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
 
 @end

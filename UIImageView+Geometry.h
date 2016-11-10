@@ -11,5 +11,7 @@
 @interface UIImageView (Geometry)
 
 - (void)rounded;
+- (void)imageWithWithImageName:(NSString *)imageName height:(int)height;
+- (void)centerWithSize:(CGSize)frame;
 
 @end
