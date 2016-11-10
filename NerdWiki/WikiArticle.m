@@ -10,11 +10,12 @@
 
 @implementation WikiArticle
 
-- (id)initWithTitle:(NSString *)title url:(NSString *)url wordmark:(NSString *)wordmark desc:(NSString *)desc {
+- (id)initWithTitle:(NSString *)title  domain:(NSString *)domain url:(NSString *)url wordmark:(NSString *)wordmark desc:(NSString *)desc {
     self = [super init];
     
     if (self) {
         _title = title;
+        _domain = domain;
         _url = url;
         _wordmark = wordmark;
         _desc = desc;
