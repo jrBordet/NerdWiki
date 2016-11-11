@@ -31,6 +31,7 @@
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
             [result addObject:[[WikiArticle alloc] initWithTitle:object[@"title"]
+                                                          domain:object[@"domain"]
                                                              url:object[@"url"]
                                                         wordmark:object[@"wordmark"]
                                                             desc:object[@"desc"]]];
