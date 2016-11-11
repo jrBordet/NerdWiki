@@ -23,4 +23,9 @@
            wordmark:(NSString *)wordmark
                desc:(NSString *)desc;
 
+- (id)initWithObject:(id)object;
+
++ (NSArray *)parseWikiArticlesWithJSONResponse:(NSDictionary *)jsonResponse;
++ (NSArray *)parseUrlDetailsWithWikiArticles:(NSArray *)wikiArticles;
+
 @end
