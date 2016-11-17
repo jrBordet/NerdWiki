@@ -8,7 +8,6 @@
 
 #import "WikiService.h"
 #import "JRRxHttpClient.h"
-#import "GOTArticle.h"
 #import "WikiArticle.h"
 
 @implementation WikiService {
@@ -31,6 +30,7 @@
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
             [result addObject:[[WikiArticle alloc] initWithTitle:object[@"title"]
+                                                          domain:object[@"domain"]
                                                              url:object[@"url"]
                                                         wordmark:object[@"wordmark"]
                                                             desc:object[@"desc"]]];

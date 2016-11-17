@@ -6,21 +6,21 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticleViewController.h"
+#import "ArticleViewController.h"
 #import "JRTableViewBinding.h"
-#import "GOTArticle.h"
-#import "GOTArticleDetailViewController.h"
+#import "Article.h"
+#import "ArticleDetailViewController.h"
 
-@interface GOTArticleViewController ()
+@interface ArticleViewController ()
 
 @property (nonatomic, strong) JRTableViewBinding *binding;
-@property (nonatomic, strong) GOTArticleViewModel *viewModel;
+@property (nonatomic, strong) ArticleViewModel *viewModel;
 
 @end
 
-@implementation GOTArticleViewController
+@implementation ArticleViewController
 
-- (instancetype)initWithViewModel:(GOTArticleViewModel *)viewModel {
+- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel {
     self = [super init];
     if (self) {
         _viewModel = viewModel;
@@ -45,11 +45,11 @@
 - (void)bindViewModel {
     @weakify(self)
     
-    UINib *nib = [UINib nibWithNibName:@"GOTArticleCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:@"ArticleCell" bundle:nil];
     
-    RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(GOTArticle *article) {
+    RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(Article *article) {
         @strongify(self)
-        GOTArticleDetailViewController *detail = [[GOTArticleDetailViewController alloc] initWithArticle:article];
+        ArticleDetailViewController *detail = [[ArticleDetailViewController alloc] initWithArticle:article];
         
         [self.navigationController pushViewController:detail animated:YES];
         return [RACSignal empty];

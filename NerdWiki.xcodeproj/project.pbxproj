@@ -10,9 +10,10 @@
 		3875412E1DD30820005C0421 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3875412D1DD30820005C0421 /* placeholder.png */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
+		388D80D91DD45AB600CFD988 /* WikiArticleDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D80D81DD45AB600CFD988 /* WikiArticleDetail.m */; };
 		38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */; };
-		38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */; };
-		38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */; };
+		38A22FC91DC9D397001CCCFE /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FC71DC9D397001CCCFE /* ArticleDetailViewController.m */; };
+		38A22FCA1DC9D397001CCCFE /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FC81DC9D397001CCCFE /* ArticleDetailViewController.xib */; };
 		38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD11DCA0900001CCCFE /* WikiArticle.m */; };
 		38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD61DCA0970001CCCFE /* WikiViewController.m */; };
 		38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */; };
@@ -30,13 +31,13 @@
 		38C19EB11D57699800004086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C19EB01D57699800004086 /* Assets.xcassets */; };
 		38C19EBF1D57699800004086 /* NerdWikiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EBE1D57699800004086 /* NerdWikiTests.m */; };
 		38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ECB1D576AB700004086 /* JRHttpClient.m */; };
-		38C19ED11D576BC900004086 /* GOTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED01D576BC900004086 /* GOTArticle.m */; };
-		38C19ED51D576C2200004086 /* GOTArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED41D576C2200004086 /* GOTArticleService.m */; };
-		38E27B851D5859AD005B3E8F /* GOTArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B841D5859AD005B3E8F /* GOTArticleViewModel.m */; };
-		38E27B8F1D585BEF005B3E8F /* GOTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B8E1D585BEF005B3E8F /* GOTArticleViewController.m */; };
+		38C19ED11D576BC900004086 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED01D576BC900004086 /* Article.m */; };
+		38C19ED51D576C2200004086 /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED41D576C2200004086 /* ArticleService.m */; };
+		38E27B851D5859AD005B3E8F /* ArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B841D5859AD005B3E8F /* ArticleViewModel.m */; };
+		38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */; };
 		38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B951D58615A005B3E8F /* JRTableViewBinding.m */; };
-		38F27FC31D5B01BD00805240 /* GOTArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F27FC11D5B01BD00805240 /* GOTArticleCell.m */; };
-		38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F27FC21D5B01BD00805240 /* GOTArticleCell.xib */; };
+		38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F27FC11D5B01BD00805240 /* ArticleCell.m */; };
+		38F27FC41D5B01BD00805240 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F27FC21D5B01BD00805240 /* ArticleCell.xib */; };
 		38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F7F2061D910C9B005C2F13 /* JRRxHttpClient.m */; };
 		940659401B16EC860EDE721F /* libPods-NerdWiki.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */; };
 		FFAAC2779D456D8D0B87D6FF /* libPods-NerdWikiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E345BA97A17C519ED0B07B02 /* libPods-NerdWikiTests.a */; };
@@ -59,11 +60,13 @@
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
+		388D80D71DD45AB600CFD988 /* WikiArticleDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticleDetail.h; sourceTree = "<group>"; };
+		388D80D81DD45AB600CFD988 /* WikiArticleDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticleDetail.m; sourceTree = "<group>"; };
 		38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Geometry.h"; sourceTree = "<group>"; };
 		38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Geometry.m"; sourceTree = "<group>"; };
-		38A22FC61DC9D397001CCCFE /* GOTArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleDetailViewController.h; sourceTree = "<group>"; };
-		38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleDetailViewController.m; sourceTree = "<group>"; };
-		38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GOTArticleDetailViewController.xib; sourceTree = "<group>"; };
+		38A22FC61DC9D397001CCCFE /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
+		38A22FC71DC9D397001CCCFE /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
+		38A22FC81DC9D397001CCCFE /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
 		38A22FD01DCA0900001CCCFE /* WikiArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticle.h; sourceTree = "<group>"; };
 		38A22FD11DCA0900001CCCFE /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
 		38A22FD51DCA0970001CCCFE /* WikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewController.h; sourceTree = "<group>"; };
@@ -98,21 +101,21 @@
 		38C19ECB1D576AB700004086 /* JRHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRHttpClient.m; sourceTree = "<group>"; };
 		38C19ECD1D576B4500004086 /* JRHttpClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRHttpClientDelegate.h; sourceTree = "<group>"; };
 		38C19ECE1D576B6600004086 /* JRHttpClientProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRHttpClientProtocol.h; sourceTree = "<group>"; };
-		38C19ECF1D576BC900004086 /* GOTArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticle.h; sourceTree = "<group>"; };
-		38C19ED01D576BC900004086 /* GOTArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticle.m; sourceTree = "<group>"; };
-		38C19ED31D576C2200004086 /* GOTArticleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleService.h; sourceTree = "<group>"; };
-		38C19ED41D576C2200004086 /* GOTArticleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleService.m; sourceTree = "<group>"; };
-		38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleServiceProtocol.h; sourceTree = "<group>"; };
-		38E27B831D5859AD005B3E8F /* GOTArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleViewModel.h; sourceTree = "<group>"; };
-		38E27B841D5859AD005B3E8F /* GOTArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleViewModel.m; sourceTree = "<group>"; };
-		38E27B8D1D585BEF005B3E8F /* GOTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleViewController.h; sourceTree = "<group>"; };
-		38E27B8E1D585BEF005B3E8F /* GOTArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleViewController.m; sourceTree = "<group>"; };
+		38C19ECF1D576BC900004086 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		38C19ED01D576BC900004086 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		38C19ED31D576C2200004086 /* ArticleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleService.h; sourceTree = "<group>"; };
+		38C19ED41D576C2200004086 /* ArticleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleService.m; sourceTree = "<group>"; };
+		38C19ED61D576C7100004086 /* ArticleServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleServiceProtocol.h; sourceTree = "<group>"; };
+		38E27B831D5859AD005B3E8F /* ArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewModel.h; sourceTree = "<group>"; };
+		38E27B841D5859AD005B3E8F /* ArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewModel.m; sourceTree = "<group>"; };
+		38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		38E27B931D58611E005B3E8F /* JRReactiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRReactiveView.h; sourceTree = "<group>"; };
 		38E27B941D58615A005B3E8F /* JRTableViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTableViewBinding.h; sourceTree = "<group>"; };
 		38E27B951D58615A005B3E8F /* JRTableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTableViewBinding.m; sourceTree = "<group>"; };
-		38F27FC01D5B01BD00805240 /* GOTArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTArticleCell.h; sourceTree = "<group>"; };
-		38F27FC11D5B01BD00805240 /* GOTArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTArticleCell.m; sourceTree = "<group>"; };
-		38F27FC21D5B01BD00805240 /* GOTArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GOTArticleCell.xib; sourceTree = "<group>"; };
+		38F27FC01D5B01BD00805240 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		38F27FC11D5B01BD00805240 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		38F27FC21D5B01BD00805240 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		38F7F2051D910C9B005C2F13 /* JRRxHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRRxHttpClient.h; sourceTree = "<group>"; };
 		38F7F2061D910C9B005C2F13 /* JRRxHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClient.m; sourceTree = "<group>"; };
 		81051F04908D0F1C9977F3EC /* Pods-NerdWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWikiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWikiTests/Pods-NerdWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,9 +167,9 @@
 		38A22FCB1DC9D39F001CCCFE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				38A22FC61DC9D397001CCCFE /* GOTArticleDetailViewController.h */,
-				38A22FC71DC9D397001CCCFE /* GOTArticleDetailViewController.m */,
-				38A22FC81DC9D397001CCCFE /* GOTArticleDetailViewController.xib */,
+				38A22FC61DC9D397001CCCFE /* ArticleDetailViewController.h */,
+				38A22FC71DC9D397001CCCFE /* ArticleDetailViewController.m */,
+				38A22FC81DC9D397001CCCFE /* ArticleDetailViewController.xib */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -187,6 +190,8 @@
 			children = (
 				38A22FD01DCA0900001CCCFE /* WikiArticle.h */,
 				38A22FD11DCA0900001CCCFE /* WikiArticle.m */,
+				388D80D71DD45AB600CFD988 /* WikiArticleDetail.h */,
+				388D80D81DD45AB600CFD988 /* WikiArticleDetail.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -215,9 +220,9 @@
 		38B64EEB1DCF854200BADEB7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				38C19ED31D576C2200004086 /* GOTArticleService.h */,
-				38C19ED41D576C2200004086 /* GOTArticleService.m */,
-				38C19ED61D576C7100004086 /* GOTArticleServiceProtocol.h */,
+				38C19ED31D576C2200004086 /* ArticleService.h */,
+				38C19ED41D576C2200004086 /* ArticleService.m */,
+				38C19ED61D576C7100004086 /* ArticleServiceProtocol.h */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -278,7 +283,7 @@
 				38C19EB51D57699800004086 /* Info.plist */,
 				38C19EAD1D57699800004086 /* NerdWiki.xcdatamodeld */,
 				38C19EA11D57699800004086 /* Supporting Files */,
-				38C19ED21D576BF400004086 /* GOTArticle */,
+				38C19ED21D576BF400004086 /* Article */,
 				38A22FD31DCA0905001CCCFE /* Wiki */,
 			);
 			path = NerdWiki;
@@ -315,7 +320,7 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		38C19ED21D576BF400004086 /* GOTArticle */ = {
+		38C19ED21D576BF400004086 /* Article */ = {
 			isa = PBXGroup;
 			children = (
 				38B64EEB1DCF854200BADEB7 /* Service */,
@@ -323,14 +328,14 @@
 				38E27B821D585995005B3E8F /* Model */,
 				38E27B861D585B52005B3E8F /* ViewModel */,
 			);
-			name = GOTArticle;
+			name = Article;
 			sourceTree = "<group>";
 		};
 		38E27B821D585995005B3E8F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38C19ECF1D576BC900004086 /* GOTArticle.h */,
-				38C19ED01D576BC900004086 /* GOTArticle.m */,
+				38C19ECF1D576BC900004086 /* Article.h */,
+				38C19ED01D576BC900004086 /* Article.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,8 +343,8 @@
 		38E27B861D585B52005B3E8F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				38E27B831D5859AD005B3E8F /* GOTArticleViewModel.h */,
-				38E27B841D5859AD005B3E8F /* GOTArticleViewModel.m */,
+				38E27B831D5859AD005B3E8F /* ArticleViewModel.h */,
+				38E27B841D5859AD005B3E8F /* ArticleViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -359,11 +364,11 @@
 		38EBC4A31D58B34C003E78EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38E27B8D1D585BEF005B3E8F /* GOTArticleViewController.h */,
-				38E27B8E1D585BEF005B3E8F /* GOTArticleViewController.m */,
-				38F27FC01D5B01BD00805240 /* GOTArticleCell.h */,
-				38F27FC11D5B01BD00805240 /* GOTArticleCell.m */,
-				38F27FC21D5B01BD00805240 /* GOTArticleCell.xib */,
+				38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */,
+				38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */,
+				38F27FC01D5B01BD00805240 /* ArticleCell.h */,
+				38F27FC11D5B01BD00805240 /* ArticleCell.m */,
+				38F27FC21D5B01BD00805240 /* ArticleCell.xib */,
 				38A22FCB1DC9D39F001CCCFE /* Detail */,
 			);
 			name = View;
@@ -476,11 +481,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38A22FCA1DC9D397001CCCFE /* GOTArticleDetailViewController.xib in Resources */,
+				38A22FCA1DC9D397001CCCFE /* ArticleDetailViewController.xib in Resources */,
 				38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
 				3875412E1DD30820005C0421 /* placeholder.png in Resources */,
-				38F27FC41D5B01BD00805240 /* GOTArticleCell.xib in Resources */,
+				38F27FC41D5B01BD00805240 /* ArticleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,25 +599,26 @@
 				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
 				38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */,
 				38C19EA91D57699800004086 /* ViewController.m in Sources */,
-				38E27B8F1D585BEF005B3E8F /* GOTArticleViewController.m in Sources */,
+				38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
-				38C19ED51D576C2200004086 /* GOTArticleService.m in Sources */,
+				38C19ED51D576C2200004086 /* ArticleService.m in Sources */,
 				38B64EF51DCF903300BADEB7 /* WikiViewModel.m in Sources */,
 				388983191DBDDF39002C5C3D /* JRCache.m in Sources */,
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
 				38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */,
 				38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */,
-				38A22FC91DC9D397001CCCFE /* GOTArticleDetailViewController.m in Sources */,
+				38A22FC91DC9D397001CCCFE /* ArticleDetailViewController.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
 				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
 				38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */,
-				38F27FC31D5B01BD00805240 /* GOTArticleCell.m in Sources */,
+				38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
 				38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */,
+				388D80D91DD45AB600CFD988 /* WikiArticleDetail.m in Sources */,
 				38B64EEE1DCF857500BADEB7 /* WikiService.m in Sources */,
-				38C19ED11D576BC900004086 /* GOTArticle.m in Sources */,
-				38E27B851D5859AD005B3E8F /* GOTArticleViewModel.m in Sources */,
+				38C19ED11D576BC900004086 /* Article.m in Sources */,
+				38E27B851D5859AD005B3E8F /* ArticleViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

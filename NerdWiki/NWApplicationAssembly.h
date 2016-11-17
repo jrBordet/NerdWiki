@@ -8,14 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
-#import "GOTArticleServiceProtocol.h"
-#import "GOTArticleViewModel.h"
 
 @class GOTArticleService;
 
 @interface NWApplicationAssembly : TyphoonAssembly
 
-- (GOTArticleService *)gotArticleService;
-- (GOTArticleViewModel *)gotArticleViewModel;
 
 @end

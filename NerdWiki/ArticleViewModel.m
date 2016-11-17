@@ -6,21 +6,21 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticleViewModel.h"
+#import "ArticleViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ReactiveCocoa/RACEXTScope.h"
-#import "GOTArticle.h"
+#import "Article.h"
 
-@interface GOTArticleViewModel ()
+@interface ArticleViewModel ()
 
-@property (nonatomic, weak) id <GOTArticleServiceProtocol> service;
+@property (nonatomic, weak) id <ArticleServiceProtocol> service;
 @property (nonatomic, strong) NSArray *result;
 
 @end
 
-@implementation GOTArticleViewModel
+@implementation ArticleViewModel
 
-- (instancetype)initWithService:(id<GOTArticleServiceProtocol>)service {
+- (instancetype)initWithService:(id<ArticleServiceProtocol>)service {
     self = [super init];
     if (self) {
         _service = service;

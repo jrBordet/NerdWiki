@@ -10,7 +10,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "JRRxHttpClient.h"
 
-@protocol GOTArticleServiceProtocol <NSObject>
+@protocol ArticleServiceProtocol <NSObject>
 
 // Methods
 /**
