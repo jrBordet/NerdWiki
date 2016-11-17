@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GOTArticleServiceProtocol.h"
+#import "ArticleServiceProtocol.h"
 
 @protocol RxHttpClientProtocol;
 
-@interface GOTArticleService : NSObject <GOTArticleServiceProtocol>
+@interface ArticleService : NSObject <ArticleServiceProtocol>
 
 @property (nonatomic, strong) id<RxHttpClientProtocol> rxSharedClient;
 @property (nonatomic, strong) NSString *test;

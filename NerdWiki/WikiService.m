@@ -8,7 +8,6 @@
 
 #import "WikiService.h"
 #import "JRRxHttpClient.h"
-#import "GOTArticle.h"
 #import "WikiArticle.h"
 
 @implementation WikiService {

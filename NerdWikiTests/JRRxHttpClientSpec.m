@@ -8,7 +8,7 @@
 
 #import <Kiwi/Kiwi.h>
 #import "JRRxHttpClient.h"
-#import "GOTArticle.h"
+#import "Article.h"
 #import "WikiArticle.h"
 
 SPEC_BEGIN(JRRxHttpClientSpec)
@@ -27,7 +27,7 @@ describe(@"JRRxHttpClientSpec", ^{
             
             [[[JRRxHttpClient sharedClient] performRequestWithBaseUrl:baseUrl query:queryString transform:^id(NSDictionary *jsonResponse) {
                 [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
-                    [result addObject:[[GOTArticle alloc]initWithTitle:object[@"title"]
+                    [result addObject:[[Article alloc]initWithTitle:object[@"title"]
                                                               basepath:jsonResponse[@"basepath"]
                                                                    url:object[@"url"]
                                                               abstract:object[@"abstract"]

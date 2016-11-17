@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GOTArticleServiceProtocol.h"
+#import "ArticleServiceProtocol.h"
 
-@interface GOTArticleViewModel : NSObject
+@interface ArticleViewModel : NSObject
 
 // an Array of GOTArticle
 @property (nonatomic, strong) NSArray *searchResults;
 
 - (RACSignal *)executeSignal;
 
-- (instancetype)initWithService:(id<GOTArticleServiceProtocol>)service;
+- (instancetype)initWithService:(id<ArticleServiceProtocol>)service;
 
 @property (strong, nonatomic) NSString *searchText;
 

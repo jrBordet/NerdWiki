@@ -6,13 +6,13 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticle.h"
+#import "Article.h"
 
-@interface GOTArticle ()
+@interface Article ()
 
 @end
 
-@implementation GOTArticle
+@implementation Article
 
 - (id)initWithTitle:(NSString *)t basepath:(NSString *)basePath url:(NSString *)url abstract:(NSString *)abstract thumbnail:(NSString *)thumbnail {
     

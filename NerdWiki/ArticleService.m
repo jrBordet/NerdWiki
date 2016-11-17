@@ -6,17 +6,17 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticleService.h"
+#import "ArticleService.h"
 #import "ReactiveCocoa/RACEXTScope.h"
-#import "GOTArticle.h"
+#import "Article.h"
 
-@interface GOTArticleService ()
+@interface ArticleService ()
 
 @property (nonatomic, strong) NSMutableSet *requests;
 
 @end
 
-@implementation GOTArticleService
+@implementation ArticleService
 
 - (instancetype)init {
     self = [super init];
@@ -39,7 +39,7 @@
         __block NSMutableArray *result = [NSMutableArray new];
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
-            [result addObject:[[GOTArticle alloc]initWithTitle:object[@"title"]
+            [result addObject:[[Article alloc]initWithTitle:object[@"title"]
                                                       basepath:jsonResponse[@"basepath"]
                                                            url:object[@"url"]
                                                       abstract:object[@"abstract"]

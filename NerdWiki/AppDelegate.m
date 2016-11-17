@@ -7,9 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "GOTArticleService.h"
-#import "GOTArticleViewModel.h"
-#import "GOTArticleViewController.h"
 #import "WikiViewController.h"
 #import "WikiViewController.h"
 #import "WikiViewModel.h"
@@ -18,9 +15,6 @@
 @interface AppDelegate ()
 
 @property (nonatomic, retain) UINavigationController *navigationController;
-@property (nonatomic, strong) GOTArticleViewModel *viewModel;
-@property (nonatomic, strong) GOTArticleService *viewModelServices;
-
 @property (nonatomic, strong) WikiViewModel *wikiViewModel;
 @property (nonatomic, strong) WikiService *wikiServices;
 
@@ -43,14 +37,6 @@
     [self.window makeKeyAndVisible];
     
     return YES;
-}
-
-- (UIViewController *)createGOTArticleViewController {
-    self.viewModelServices = [[GOTArticleService alloc] init];
-    self.viewModel = [[GOTArticleViewModel alloc] initWithService:self.viewModelServices];
-    
-    //self.viewModel = [GOTArticleViewModel new];
-    return [[GOTArticleViewController alloc] initWithViewModel:self.viewModel];
 }
 
 - (UIViewController *)createWikiViewController {

@@ -6,18 +6,18 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticleCell.h"
-#import "GOTArticle.h"
+#import "ArticleCell.h"
+#import "Article.h"
 #import "JRRxHttpClient.h"
 #import "UIImageView+Geometry.h"
 
-@interface GOTArticleCell ()
+@interface ArticleCell ()
 
-@property (nonatomic, strong) GOTArticle *article;
+@property (nonatomic, strong) Article *article;
 
 @end
 
-@implementation GOTArticleCell
+@implementation ArticleCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -31,7 +31,7 @@
 
 - (void)bindViewModel:(id)viewModel {
     @weakify(self)
-    GOTArticle *article = viewModel;
+    Article *article = viewModel;
     self.article = article;
     
     self.titleLabel.text = article.title;

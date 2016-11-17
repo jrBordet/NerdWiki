@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GOTArticleViewModel.h"
+#import "ArticleViewModel.h"
 
-@interface GOTArticleViewController : UITableViewController
+@interface ArticleViewController : UITableViewController
 
-- (instancetype)initWithViewModel:(GOTArticleViewModel *)viewModel;
+- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel;
 
 @end

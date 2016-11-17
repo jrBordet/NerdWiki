@@ -6,15 +6,15 @@
 //  Copyright © 2016 Jean Raphael Bordet. All rights reserved.
 //
 
-#import "GOTArticleDetailViewController.h"
+#import "ArticleDetailViewController.h"
 
-@interface GOTArticleDetailViewController ()
+@interface ArticleDetailViewController ()
 
-@property (nonatomic, strong) GOTArticle *article;
+@property (nonatomic, strong) Article *article;
 
 @end
 
-@implementation GOTArticleDetailViewController
+@implementation ArticleDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (instancetype)initWithArticle:(GOTArticle *)article {
+- (instancetype)initWithArticle:(Article *)article {
     self = [super init];
     if (self) {
         _article = article;

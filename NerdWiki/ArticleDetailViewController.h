@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GOTArticle.h"
+#import "Article.h"
 
-@interface GOTArticleDetailViewController : UIViewController
+@interface ArticleDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
 
-- (instancetype)initWithArticle:(GOTArticle *)article;
+- (instancetype)initWithArticle:(Article *)article;
 
 @end

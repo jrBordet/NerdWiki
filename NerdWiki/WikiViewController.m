@@ -8,8 +8,8 @@
 
 #import "WikiViewController.h"
 #import "JRCollectionViewBinding.h"
-#import "GOTArticle.h"
-#import "GOTArticleDetailViewController.h"
+#import "Article.h"
+#import "ArticleDetailViewController.h"
 #import "ReactiveCocoa/RACEXTScope.h"
 #import "JRTableViewBinding.h"
 
@@ -57,8 +57,8 @@
     
     if (!_selectionCommand) {
         @strongify(self)
-        _selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(GOTArticle *article) {
-            GOTArticleDetailViewController *detail = [[GOTArticleDetailViewController alloc] initWithArticle:article];
+        _selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(Article *article) {
+            ArticleDetailViewController *detail = [[ArticleDetailViewController alloc] initWithArticle:article];
             
             [self.navigationController pushViewController:detail animated:YES];
             return [RACSignal empty];

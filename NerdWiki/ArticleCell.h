@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JRReactiveView.h"
 
-@interface GOTArticleCell : UITableViewCell <JRReactiveView>
+@interface ArticleCell : UITableViewCell <JRReactiveView>
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
