@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
-
-@class GOTArticleService;
+#import "AppDelegate.h"
+#import "WikiViewController.h"
 
 @interface NWApplicationAssembly : TyphoonAssembly
 
+- (AppDelegate *)appDelegate;
+- (WikiViewController *)rootViewController;
 
 @end

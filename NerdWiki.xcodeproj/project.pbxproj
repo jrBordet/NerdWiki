@@ -62,6 +62,7 @@
 		388983181DBDDF39002C5C3D /* JRCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCache.m; sourceTree = "<group>"; };
 		388D80D71DD45AB600CFD988 /* WikiArticleDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticleDetail.h; sourceTree = "<group>"; };
 		388D80D81DD45AB600CFD988 /* WikiArticleDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticleDetail.m; sourceTree = "<group>"; };
+		388F4B181DDEEAA200A7B073 /* WikiViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewModelProtocol.h; sourceTree = "<group>"; };
 		38A22FC31DC9CCA8001CCCFE /* UIImageView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Geometry.h"; sourceTree = "<group>"; };
 		38A22FC41DC9CCA8001CCCFE /* UIImageView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Geometry.m"; sourceTree = "<group>"; };
 		38A22FC61DC9D397001CCCFE /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
@@ -213,6 +214,7 @@
 			children = (
 				38B64EF31DCF903300BADEB7 /* WikiViewModel.h */,
 				38B64EF41DCF903300BADEB7 /* WikiViewModel.m */,
+				388F4B181DDEEAA200A7B073 /* WikiViewModelProtocol.h */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";

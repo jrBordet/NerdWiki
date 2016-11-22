@@ -13,4 +13,6 @@
 
 - (RACSignal *)fetchTopWikies;
 
+@property (nonatomic, strong) NSString *serviceUrl;
+
 @end

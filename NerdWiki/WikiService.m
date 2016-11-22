@@ -10,22 +10,12 @@
 #import "JRRxHttpClient.h"
 #import "WikiArticle.h"
 
-@implementation WikiService {
-    NSString *_baseUrl;
-}
+@implementation WikiService
 
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _baseUrl = @"http://www.wikia.com/api/v1/Wikis/List?expand=1&lang=en&batch=1";
-    }
-    return self;
-}
+@synthesize serviceUrl;
 
 - (RACSignal *)fetchTopWikies {
-    return [[JRRxHttpClient sharedClient] performRequestWithBaseUrl:_baseUrl query:nil transform:^id(NSDictionary *jsonResponse) {
+    return [[JRRxHttpClient sharedClient] performRequestWithBaseUrl:self.serviceUrl query:nil transform:^id(NSDictionary *jsonResponse) {
         __block NSMutableArray *result = [NSMutableArray new];
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {

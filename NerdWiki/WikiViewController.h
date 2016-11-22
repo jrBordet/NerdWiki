@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "WikiViewModel.h"
+#import "WikiViewModelProtocol.h"
 
 @interface WikiViewController : UITableViewController
 
-- (instancetype)initWithViewModel:(WikiViewModel *)viewModel;
+- (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "WikiViewController.h"
 #import "JRCollectionViewBinding.h"
-#import "Article.h"
+#import "WikiArticle.h"
 #import "ArticleDetailViewController.h"
 #import "ReactiveCocoa/RACEXTScope.h"
 #import "JRTableViewBinding.h"
@@ -23,13 +23,26 @@
 
 @implementation WikiViewController {
     UICollectionView *_collectionView;
-    WikiViewModel *_viewModel;
+    id<WikiViewModelProtocol> _viewModel;
 }
 
-- (instancetype)initWithViewModel:(WikiViewModel *)viewModel {
+- (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel {
     self = [super init];
     if (self) {
         _viewModel = viewModel;
+        
+        if (!viewModel) {
+            _searchResults = [NSMutableArray new];
+
+            for (int i = 0; i < 10; i++) {
+                WikiArticle *a = [[WikiArticle alloc] initWithTitle:@"ksdfh"
+                                                             domain:@"elderscrolls.wikia.com"
+                                                                url:@"http://elderscrolls.wikia.com/"
+                                                           wordmark:@"http://img4.wikia.nocookie.net/__cb20150420200658/elderscrolls/images/8/89/Wiki-wordmark.png"
+                                                               desc:@"sldiflisdjflijdsf"];
+                [_searchResults addObject:a];
+            }
+        }
     }
     return self;
 }
@@ -39,7 +52,7 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    [self bindViewModel];
+    [self bindViewModel];    
 }
 
 - (instancetype)init {

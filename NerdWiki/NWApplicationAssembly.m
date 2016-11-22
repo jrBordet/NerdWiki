@@ -7,31 +7,52 @@
 //
 
 #import "NWApplicationAssembly.h"
-#import "JRRxHttpClient.h"
-//#import "GOTArticleService.h"
-#import "AppDelegate.h"
+#import "WikiViewModel.h"
+#import "WikiViewModelProtocol.h"
+#import "WikiService.h"
+#import "WikiServiceProtocol.h"
 
 @implementation NWApplicationAssembly
 
 #pragma mark - Bootstrapping
 
-//- (GOTArticleViewModel *)gotArticleViewModel {
-//    return [TyphoonDefinition withClass:[GOTArticleViewModel class] configuration:^(TyphoonDefinition *definition) {
-//        [definition injectProperty:@selector(initWithService:) with:[self gotArticleService]];
-//    }];
-//}
-//
-//- (GOTArticleService *)gotArticleService {
-//    return [TyphoonDefinition withClass:[GOTArticleService class] configuration:^(TyphoonDefinition *definition) {
-//        [definition injectProperty:@selector(rxSharedClient) with:[self sharedClient]];
-//    }];
-//}
+- (AppDelegate *)appDelegate {
+    return [TyphoonDefinition withClass:[AppDelegate class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(window) with:[self mainWindow]];
+        [definition injectProperty:@selector(rootViewController) with:[self rootViewController]];
+    }];
+}
 
-- (id<RxHttpClientProtocol>)sharedClient {
-    return [TyphoonDefinition withClass:[JRRxHttpClient class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(sharedClient) parameters:^(TyphoonMethod *initializer) {
-            definition.scope = TyphoonScopeSingleton;
+- (UIWindow *)mainWindow {
+    return [TyphoonDefinition withClass:[UIWindow class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithFrame:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:[NSValue valueWithCGRect:[[UIScreen mainScreen] bounds]]];
         }];
+    }];
+}
+
+- (WikiViewController *)rootViewController {
+    return [TyphoonDefinition withClass:[WikiViewController class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithViewModel:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:[self wikiModel]];
+        }];
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (id<WikiViewModelProtocol>)wikiModel {
+    return [TyphoonDefinition withClass:[WikiViewModel class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithService:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:[self wikiService]];
+        }];
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (id<WikiServiceProtocol>)wikiService {
+    return [TyphoonDefinition withClass:[WikiService class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(init)];
+        [definition injectProperty:@selector(serviceUrl) with:@"http://www.wikia.com/api/v1/Wikis/List?expand=1&lang=en&batch=1"];
     }];
 }
 
