@@ -14,6 +14,5 @@
 @interface ArticleService : NSObject <ArticleServiceProtocol>
 
 @property (nonatomic, strong) id<RxHttpClientProtocol> rxSharedClient;
-@property (nonatomic, strong) NSString *test;
 
 @end

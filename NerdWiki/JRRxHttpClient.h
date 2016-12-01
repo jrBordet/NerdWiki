@@ -13,18 +13,14 @@
 
 @protocol RxHttpClientProtocol <NSObject>
 
-// Singleton
 + (instancetype)sharedClient;
 
-// Utility methods
 - (RACSignal *)performRequestWithBaseUrl:(NSString *)baseUrl
                                    query:(NSDictionary *)query
                                transform:(id (^)(NSDictionary *jsonResponse))response;
 
--(RACSignal *)fetchImageFromUrl:(NSURL *)url placheholderImage:(UIImageView *)placeholderImage;
-
-
-// Properties
+-(RACSignal *)fetchImageFromUrl:(NSURL *)url
+              placheholderImage:(UIImageView *)placeholderImage;
 
 @end
 

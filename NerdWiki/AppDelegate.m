@@ -19,11 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.navigationController = [UINavigationController new];
-    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     // create and navigate to a view controller
-    [self.navigationController pushViewController:self.rootViewController animated:NO];
+    [self.navigationController pushViewController:self.wikiViewController animated:NO];
     
     // show the navigation controller
     self.window.rootViewController = self.navigationController;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385F5CD21DEC0C9A003EB103 /* NWCoreComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 385F5CD11DEC0C9A003EB103 /* NWCoreComponents.m */; };
+		385F5CD81DEC11CE003EB103 /* WikiArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385F5CD61DEC11CE003EB103 /* WikiArticleDetailViewController.m */; };
+		385F5CD91DEC11CE003EB103 /* WikiArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385F5CD71DEC11CE003EB103 /* WikiArticleDetailViewController.xib */; };
 		3875412E1DD30820005C0421 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3875412D1DD30820005C0421 /* placeholder.png */; };
 		388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */; };
 		388983191DBDDF39002C5C3D /* JRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 388983181DBDDF39002C5C3D /* JRCache.m */; };
@@ -26,10 +29,8 @@
 		38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */; };
 		38C19EA31D57699800004086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA21D57699800004086 /* main.m */; };
 		38C19EA61D57699800004086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA51D57699800004086 /* AppDelegate.m */; };
-		38C19EA91D57699800004086 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EA81D57699800004086 /* ViewController.m */; };
 		38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EAD1D57699800004086 /* NerdWiki.xcdatamodeld */; };
 		38C19EB11D57699800004086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C19EB01D57699800004086 /* Assets.xcassets */; };
-		38C19EBF1D57699800004086 /* NerdWikiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19EBE1D57699800004086 /* NerdWikiTests.m */; };
 		38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ECB1D576AB700004086 /* JRHttpClient.m */; };
 		38C19ED11D576BC900004086 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED01D576BC900004086 /* Article.m */; };
 		38C19ED51D576C2200004086 /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED41D576C2200004086 /* ArticleService.m */; };
@@ -56,6 +57,11 @@
 /* Begin PBXFileReference section */
 		2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWiki/Pods-NerdWiki.release.xcconfig"; sourceTree = "<group>"; };
 		2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NerdWiki.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		385F5CD01DEC0C9A003EB103 /* NWCoreComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWCoreComponents.h; sourceTree = "<group>"; };
+		385F5CD11DEC0C9A003EB103 /* NWCoreComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWCoreComponents.m; sourceTree = "<group>"; };
+		385F5CD51DEC11CE003EB103 /* WikiArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticleDetailViewController.h; sourceTree = "<group>"; };
+		385F5CD61DEC11CE003EB103 /* WikiArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticleDetailViewController.m; sourceTree = "<group>"; };
+		385F5CD71DEC11CE003EB103 /* WikiArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiArticleDetailViewController.xib; sourceTree = "<group>"; };
 		3875412D1DD30820005C0421 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClientSpec.m; sourceTree = "<group>"; };
 		388983171DBDDF39002C5C3D /* JRCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCache.h; sourceTree = "<group>"; };
@@ -86,17 +92,15 @@
 		38B64EF61DCF914C00BADEB7 /* WikiViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewModelSpec.m; sourceTree = "<group>"; };
 		38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWApplicationAssembly.h; sourceTree = "<group>"; };
 		38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWApplicationAssembly.m; sourceTree = "<group>"; };
+		38BCEAB71DE6D1C500C943F4 /* WikiArticleDetailProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticleDetailProtocol.h; sourceTree = "<group>"; };
 		38C19E9E1D57699800004086 /* NerdWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C19EA21D57699800004086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		38C19EA41D57699800004086 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		38C19EA51D57699800004086 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		38C19EA71D57699800004086 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		38C19EA81D57699800004086 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		38C19EAE1D57699800004086 /* NerdWiki.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NerdWiki.xcdatamodel; sourceTree = "<group>"; };
 		38C19EB01D57699800004086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38C19EB51D57699800004086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C19EBA1D57699800004086 /* NerdWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NerdWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38C19EBE1D57699800004086 /* NerdWikiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdWikiTests.m; sourceTree = "<group>"; };
 		38C19EC01D57699800004086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C19ECA1D576AB700004086 /* JRHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRHttpClient.h; sourceTree = "<group>"; };
 		38C19ECB1D576AB700004086 /* JRHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRHttpClient.m; sourceTree = "<group>"; };
@@ -145,6 +149,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3805F3A01DE81E400012E7BC /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */,
+				38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */,
+				38F27FC01D5B01BD00805240 /* ArticleCell.h */,
+				38F27FC11D5B01BD00805240 /* ArticleCell.m */,
+				38F27FC21D5B01BD00805240 /* ArticleCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		3815B9E31DBF378F00284110 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +170,37 @@
 				38C19ECE1D576B6600004086 /* JRHttpClientProtocol.h */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		385F5CD31DEC10F4003EB103 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				385F5CD01DEC0C9A003EB103 /* NWCoreComponents.h */,
+				385F5CD11DEC0C9A003EB103 /* NWCoreComponents.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		385F5CD41DEC11AB003EB103 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				385F5CD51DEC11CE003EB103 /* WikiArticleDetailViewController.h */,
+				385F5CD61DEC11CE003EB103 /* WikiArticleDetailViewController.m */,
+				385F5CD71DEC11CE003EB103 /* WikiArticleDetailViewController.xib */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		385F5CDA1DEC163D003EB103 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				38A22FD51DCA0970001CCCFE /* WikiViewController.h */,
+				38A22FD61DCA0970001CCCFE /* WikiViewController.m */,
+				38A22FDC1DCA2143001CCCFE /* WikiCell.h */,
+				38A22FDD1DCA2143001CCCFE /* WikiCell.m */,
+				38A22FDE1DCA2143001CCCFE /* WikiCell.xib */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		388983161DBDDF1D002C5C3D /* Cache */ = {
@@ -193,6 +240,7 @@
 				38A22FD11DCA0900001CCCFE /* WikiArticle.m */,
 				388D80D71DD45AB600CFD988 /* WikiArticleDetail.h */,
 				388D80D81DD45AB600CFD988 /* WikiArticleDetail.m */,
+				38BCEAB71DE6D1C500C943F4 /* WikiArticleDetailProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,11 +248,8 @@
 		38A22FD81DCA097C001CCCFE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38A22FD51DCA0970001CCCFE /* WikiViewController.h */,
-				38A22FD61DCA0970001CCCFE /* WikiViewController.m */,
-				38A22FDC1DCA2143001CCCFE /* WikiCell.h */,
-				38A22FDD1DCA2143001CCCFE /* WikiCell.m */,
-				38A22FDE1DCA2143001CCCFE /* WikiCell.xib */,
+				385F5CD41DEC11AB003EB103 /* Detail */,
+				385F5CDA1DEC163D003EB103 /* List */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,6 +289,7 @@
 			children = (
 				38B9F5671D925B33004B97B4 /* NWApplicationAssembly.h */,
 				38B9F5681D925B33004B97B4 /* NWApplicationAssembly.m */,
+				385F5CD31DEC10F4003EB103 /* core */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -279,8 +325,6 @@
 				38C19EC91D576AA000004086 /* Networking */,
 				38C19EA41D57699800004086 /* AppDelegate.h */,
 				38C19EA51D57699800004086 /* AppDelegate.m */,
-				38C19EA71D57699800004086 /* ViewController.h */,
-				38C19EA81D57699800004086 /* ViewController.m */,
 				38C19EB01D57699800004086 /* Assets.xcassets */,
 				38C19EB51D57699800004086 /* Info.plist */,
 				38C19EAD1D57699800004086 /* NerdWiki.xcdatamodeld */,
@@ -302,7 +346,6 @@
 		38C19EBD1D57699800004086 /* NerdWikiTests */ = {
 			isa = PBXGroup;
 			children = (
-				38C19EBE1D57699800004086 /* NerdWikiTests.m */,
 				38C19EC01D57699800004086 /* Info.plist */,
 				388983141DBDDDAA002C5C3D /* JRRxHttpClientSpec.m */,
 				38B64EF11DCF887E00BADEB7 /* WikiServiceSpec.m */,
@@ -366,11 +409,7 @@
 		38EBC4A31D58B34C003E78EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */,
-				38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */,
-				38F27FC01D5B01BD00805240 /* ArticleCell.h */,
-				38F27FC11D5B01BD00805240 /* ArticleCell.m */,
-				38F27FC21D5B01BD00805240 /* ArticleCell.xib */,
+				3805F3A01DE81E400012E7BC /* TableView */,
 				38A22FCB1DC9D39F001CCCFE /* Detail */,
 			);
 			name = View;
@@ -483,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385F5CD91DEC11CE003EB103 /* WikiArticleDetailViewController.xib in Resources */,
 				38A22FCA1DC9D397001CCCFE /* ArticleDetailViewController.xib in Resources */,
 				38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */,
 				38C19EB11D57699800004086 /* Assets.xcassets in Resources */,
@@ -600,7 +640,6 @@
 			files = (
 				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
 				38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */,
-				38C19EA91D57699800004086 /* ViewController.m in Sources */,
 				38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
 				38C19ED51D576C2200004086 /* ArticleService.m in Sources */,
@@ -615,7 +654,9 @@
 				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
 				38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */,
 				38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */,
+				385F5CD21DEC0C9A003EB103 /* NWCoreComponents.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
+				385F5CD81DEC11CE003EB103 /* WikiArticleDetailViewController.m in Sources */,
 				38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */,
 				388D80D91DD45AB600CFD988 /* WikiArticleDetail.m in Sources */,
 				38B64EEE1DCF857500BADEB7 /* WikiService.m in Sources */,
@@ -631,7 +672,6 @@
 				38B64EF21DCF887E00BADEB7 /* WikiServiceSpec.m in Sources */,
 				38B64EF71DCF914C00BADEB7 /* WikiViewModelSpec.m in Sources */,
 				388983151DBDDDAA002C5C3D /* JRRxHttpClientSpec.m in Sources */,
-				38C19EBF1D57699800004086 /* NerdWikiTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

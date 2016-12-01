@@ -10,8 +10,13 @@
 #import "WikiViewModel.h"
 #import "WikiViewModelProtocol.h"
 
+@class NWApplicationAssembly;
+@class NWCoreComponents;
+
 @interface WikiViewController : UITableViewController
 
-- (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel;
+@property (nonatomic, strong) NSString *templateCell;
+
+- (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core;
 
 @end

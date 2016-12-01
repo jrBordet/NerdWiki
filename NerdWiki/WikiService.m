@@ -12,10 +12,11 @@
 
 @implementation WikiService
 
-@synthesize serviceUrl;
+@synthesize sharedClient, serviceUrl;
 
 - (RACSignal *)fetchTopWikies {
-    return [[JRRxHttpClient sharedClient] performRequestWithBaseUrl:self.serviceUrl query:nil transform:^id(NSDictionary *jsonResponse) {
+    // [JRRxHttpClient sharedClient]
+    return [self.sharedClient performRequestWithBaseUrl:self.serviceUrl query:nil transform:^id(NSDictionary *jsonResponse) {
         __block NSMutableArray *result = [NSMutableArray new];
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {

@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+@protocol RxHttpClientProtocol;
+
 @protocol WikiServiceProtocol <NSObject>
 
 - (RACSignal *)fetchTopWikies;
 
 @property (nonatomic, strong) NSString *serviceUrl;
+
+@property (nonatomic, strong) id<RxHttpClientProtocol> sharedClient;
 
 @end

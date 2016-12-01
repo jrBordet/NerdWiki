@@ -13,7 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) WikiViewController *rootViewController;
+@property (nonatomic, strong) WikiViewController *wikiViewController;
 
 @end
 

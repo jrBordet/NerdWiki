@@ -28,7 +28,7 @@
 - (RACSignal *)executeSignal {
     @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self)
+       // @strongify(self)
         
         [[_service fetchTopWikies] subscribeNext:^(id result) {
             

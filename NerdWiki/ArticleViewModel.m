@@ -13,7 +13,7 @@
 
 @interface ArticleViewModel ()
 
-@property (nonatomic, weak) id <ArticleServiceProtocol> service;
+@property (nonatomic, strong) id <ArticleServiceProtocol> service;
 @property (nonatomic, strong) NSArray *result;
 
 @end
