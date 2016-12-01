@@ -8,10 +8,29 @@
 
 #import <Foundation/Foundation.h>
 #import "TyphoonAssembly.h"
+#import "NWCoreComponents.h"
+#import "AppDelegate.h"
 
-@class GOTArticleService;
+@class NWCoreComponents;
+
+@class JRTableViewBinding;
+
+@class WikiViewController;
+@class WikiArticleDetailViewController;
+@class WikiArticle;
+
+@class ArticleViewController;
 
 @interface NWApplicationAssembly : TyphoonAssembly
 
+@property (nonatomic, strong) NWCoreComponents *coreComponents;
+
+- (AppDelegate *)appDelegate;
+
+- (WikiViewController *)wikiViewController;
+
+- (WikiArticleDetailViewController *)detailViewControllerWith:(WikiArticle *)article;
+
+- (ArticleViewController *)articleViewController;
 
 @end

@@ -10,28 +10,19 @@
 
 @implementation WikiArticleDetail
 
-- (id)initWithName:(NSString *)name domain:(NSString *)domain url:(NSString *)url wordmark:(NSString *)wordmark desc:(NSString *)desc {
+@synthesize name, domain, url, wordmark, desc, favorite;
+
+- (id)initWithObject:(WikiArticle *)object {
     self = [super init];
     
     if (self) {
-        _name = name;
-        _domain = domain;
-        _url = url;
-        _wordmark = wordmark;
-        _desc = desc;
+        name = object.title;
+        domain = object.domain;
+        url = object.url;
+        wordmark = object.wordmark;
+        desc = object.desc;
     }
-    return self;
-}
-
-- (id)initWithObject:(id)object {
-    self = [super init];
-    if (self) {
-        self = [self initWithName:object[@"title"]
-                            domain:object[@"domain"]
-                               url:object[@"url"]
-                          wordmark:object[@"wordmark"]
-                              desc:object[@"desc"]];
-    }
+    
     return self;
 }
 

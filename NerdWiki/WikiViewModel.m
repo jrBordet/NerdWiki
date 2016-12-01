@@ -7,11 +7,10 @@
 //
 
 #import "WikiViewModel.h"
-#import "ReactiveCocoa/RACEXTScope.h"
 
-@interface WikiViewModel ()
-
-@property (nonatomic, weak) id <WikiServiceProtocol> service;
+@interface WikiViewModel () {
+    id <WikiServiceProtocol> _service;
+}
 
 @end
 
@@ -20,7 +19,7 @@
 - (instancetype)initWithService:(id<WikiServiceProtocol>)service {
     self = [super init];
     if (self) {
-        _service = service;        
+        _service = service;
     }
     
     return self;
@@ -29,9 +28,9 @@
 - (RACSignal *)executeSignal {
     @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self)
+       // @strongify(self)
         
-        [[self.service fetchTopWikies] subscribeNext:^(id result) {
+        [[_service fetchTopWikies] subscribeNext:^(id result) {
             
             [subscriber sendNext:result];
             [subscriber sendCompleted];

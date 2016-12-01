@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "WikiServiceProtocol.h"
+#import "WikiViewModelProtocol.h"
+#import "ReactiveCocoa/RACEXTScope.h"
 
-@interface WikiViewModel : NSObject
-
-- (RACSignal *)executeSignal;
-
-- (instancetype)initWithService:(id<WikiServiceProtocol>)service;
+@interface WikiViewModel : NSObject <WikiViewModelProtocol>
 
 @end

@@ -34,9 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.navigationController.navigationBar setHidden:YES];
-    
+        
     self.tableView.backgroundColor = [UIColor blackColor];
     
     [self bindViewModel];

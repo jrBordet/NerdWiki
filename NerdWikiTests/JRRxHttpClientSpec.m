@@ -59,18 +59,14 @@ describe(@"JRRxHttpClientSpec", ^{
     context(@"When fetch top Wiki Articles", ^{
         it(@"should return all related articles", ^{
             NSString *url = @"http://www.wikia.com/api/v1/Wikis/List?expand=100&batch=1";
-            
-            __block NSArray *result = [NSMutableArray new];
-            
+                        
             [[[[JRRxHttpClient sharedClient] performRequestWithBaseUrl:url query:nil transform:^id(NSDictionary *jsonResponse) {
                 return [WikiArticle parseWikiArticlesWithJSONResponse:jsonResponse];
             }] map:^id(NSArray *value) {
                 return [WikiArticle parseUrlDetailsWithWikiArticles:value];
             }] subscribeNext:^(id x) {
-                result = x;
+                [[expectFutureValue(x) shouldEventually] haveCountOf:25];
             }];
-            
-            [[expectFutureValue(result) shouldEventually] haveCountOf:25];
         });
     });
 });

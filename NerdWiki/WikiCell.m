@@ -13,8 +13,7 @@
 
 @implementation WikiCell
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.thumbnailImage.image = [[UIImage alloc] initWithContentsOfFile:@"placeholder.png"];

@@ -7,11 +7,12 @@
 //
 
 #import "WikiViewController.h"
-#import "JRCollectionViewBinding.h"
-#import "Article.h"
-#import "ArticleDetailViewController.h"
 #import "ReactiveCocoa/RACEXTScope.h"
+#import "NWApplicationAssembly.h"
+#import "NWCoreComponents.h"
+#import "JRCollectionViewBinding.h"
 #import "JRTableViewBinding.h"
+#import "WikiArticleDetailViewController.h"
 
 @interface WikiViewController ()
 
@@ -22,16 +23,24 @@
 @end
 
 @implementation WikiViewController {
-    UICollectionView *_collectionView;
-    WikiViewModel *_viewModel;
+    //UICollectionView *_collectionView;
+    id<WikiViewModelProtocol> _viewModel;
+    NWApplicationAssembly *_assembly;
+    NWCoreComponents *_core;
 }
 
-- (instancetype)initWithViewModel:(WikiViewModel *)viewModel {
+- (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core {
     self = [super init];
     if (self) {
         _viewModel = viewModel;
+        _assembly = assembly;
+        _core = core;
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -57,10 +66,12 @@
     
     if (!_selectionCommand) {
         @strongify(self)
-        _selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(Article *article) {
-            ArticleDetailViewController *detail = [[ArticleDetailViewController alloc] initWithArticle:article];
+        _selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(WikiArticle *article) {
             
-            [self.navigationController pushViewController:detail animated:YES];
+            WikiArticleDetailViewController *detail = [_assembly detailViewControllerWith:article];
+            
+            [self.navigationController pushViewController:detail
+                                                 animated:YES];
             return [RACSignal empty];
         }];
     }
@@ -76,49 +87,48 @@
 - (void)bindViewModel {
     @weakify(self)
     
-    //[self createCollectionView];
-    
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
-
+        
         self.searchResults = x;
     }];
     
-    UINib *nib = [UINib nibWithNibName:@"WikiCell" bundle:nil];
+    UINib *templateCell = [UINib nibWithNibName:self.templateCell bundle:nil];
     
-//    self.binding = [JRCollectionViewBinding bindingHelperForCollectionView:_collectionView
-//                                                                     frame:self.view.frame
-//                                                              sourceSignal:RACObserve(self, searchResults)
-//                                                          selectionCommand:self.selectionCommand
-//                                                              templateCell:nib
-//                                                           scrollDirection:UICollectionViewScrollDirectionVertical];
-    
-    self.binding = [JRTableViewBinding bindingHelperForTableView:self.tableView
-                                                    sourceSignal:RACObserve(self, searchResults)
-                                                selectionCommand:self.selectionCommand
-                                                    templateCell:nib];
+    self.binding = [_core tableViewBinding:self.tableView
+                                      sourceSignal:RACObserve(self, searchResults)
+                                  selectionCommand:self.selectionCommand
+                                      templateCell:templateCell];
     
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         [self.tableView reloadData];
     }];
 }
 
-- (void)createCollectionView {
-    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    UICollectionViewFlowLayout *layout= [UICollectionViewFlowLayout new];
-    
-    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [layout setItemSize:CGSizeMake(200, 147)];
-    [layout setMinimumLineSpacing:0];
-    [layout setMinimumInteritemSpacing:0];
-    
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
-                                         collectionViewLayout:layout];
-    
-    _collectionView.backgroundColor = [UIColor blackColor];
-    
-    [self.view addSubview:_collectionView];
-}
-
 @end
+
+
+//    self.binding = [JRCollectionViewBinding bindingHelperForCollectionView:_collectionView
+//                                                                     frame:self.view.frame
+//                                                              sourceSignal:RACObserve(self, searchResults)
+//                                                          selectionCommand:self.selectionCommand
+//                                                              templateCell:nib
+//                                                           scrollDirection:UICollectionViewScrollDirectionVertical];
+
+//- (void)createCollectionView {
+//    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//
+//    UICollectionViewFlowLayout *layout= [UICollectionViewFlowLayout new];
+//
+//    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+//    [layout setItemSize:CGSizeMake(200, 147)];
+//    [layout setMinimumLineSpacing:0];
+//    [layout setMinimumInteritemSpacing:0];
+//
+//    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
+//                                         collectionViewLayout:layout];
+//
+//    _collectionView.backgroundColor = [UIColor blackColor];
+//
+//    [self.view addSubview:_collectionView];
+//}
