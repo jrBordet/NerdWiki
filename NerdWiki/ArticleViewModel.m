@@ -24,29 +24,17 @@
     self = [super init];
     if (self) {
         _service = service;
-        
-        self.searchText = @"test this more than 3";
-        
-        [self initialize];
     }
     
     return self;
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (RACSignal *)executeSignal {
+- (RACSignal *)executeSignalWithRequest:(NSString *)request {
     @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self)
         
-        [[self.service fetchTopCharacters] subscribeNext:^(id result) {
+        [[self.service fetchTopCharactersWithRequest:request] subscribeNext:^(id result) {
             @strongify(self)
             self.searchResults = result;
             
@@ -57,9 +45,6 @@
         return [RACDisposable disposableWithBlock:^{
         }];
     }];
-}
-
-- (void)initialize {
 }
 
 @end

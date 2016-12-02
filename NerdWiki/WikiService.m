@@ -15,7 +15,6 @@
 @synthesize sharedClient, serviceUrl;
 
 - (RACSignal *)fetchTopWikies {
-    // [JRRxHttpClient sharedClient]
     return [self.sharedClient performRequestWithBaseUrl:self.serviceUrl query:nil transform:^id(NSDictionary *jsonResponse) {
         __block NSMutableArray *result = [NSMutableArray new];
         

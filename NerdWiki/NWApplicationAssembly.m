@@ -18,6 +18,7 @@
 #import "JRTableViewBinding.h"
 #import "ArticleServiceProtocol.h"
 #import "ArticleService.h"
+#import "ArticleDetailViewController.h"
 
 @implementation NWApplicationAssembly
 
@@ -64,12 +65,24 @@
     }];
 }
 
-- (ArticleViewController *)articleViewController {
+- (ArticleViewController *)articleViewControllerWithArticleRequest:(NSString *)articleRequest {
     return [TyphoonDefinition withClass:[ArticleViewController class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(initWithViewModel:) parameters:^(TyphoonMethod *initializer) {
+        [definition injectProperty:@selector(templateCell) with:@"ArticleCell"];
+        
+        [definition useInitializer:@selector(initWithViewModel:articleRequest:assembly:core:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self articleViewModel]];
+            [initializer injectParameterWith:articleRequest];
+            [initializer injectParameterWith:self];
+            [initializer injectParameterWith:_coreComponents];
         }];
-         definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (ArticleDetailViewController *)articleDetailwithArticle:(Article *)article {
+    return [TyphoonDefinition withClass:[ArticleDetailViewController class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithArticle:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:article];
+        }];
     }];
 }
 
@@ -110,9 +123,10 @@
 
 - (id<ArticleServiceProtocol>)articleService {
     return [TyphoonDefinition withClass:[ArticleService class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(init) parameters:^(TyphoonMethod *initializer) {
-            
-        }];
+        [definition injectProperty:@selector(serviceUrl) with:@"http://gameofthrones.wikia.com/api/v1/Articles/Top"];
+        [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
+        
+        [definition useInitializer:@selector(init)];
     }];
 }
 

@@ -11,12 +11,11 @@
 
 @interface ArticleViewModel : NSObject
 
-// an Array of GOTArticle
 @property (nonatomic, strong) NSArray *searchResults;
 
-- (RACSignal *)executeSignal;
-
 - (instancetype)initWithService:(id<ArticleServiceProtocol>)service;
+
+- (RACSignal *)executeSignalWithRequest:(NSString *)request;
 
 @property (strong, nonatomic) NSString *searchText;
 

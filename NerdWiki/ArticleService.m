@@ -18,6 +18,8 @@
 
 @implementation ArticleService
 
+@synthesize sharedClient, serviceUrl;
+
 - (instancetype)init {
     self = [super init];
     
@@ -28,14 +30,14 @@
     return self;
 }
 
-- (RACSignal *)fetchTopCharacters {
+- (RACSignal *)fetchTopCharactersWithRequest:(NSString *)request {
     NSDictionary *queryString = @ {
         @"expand": @"1",
         @"Category": @"Characters",
         @"limit": @"1000"
     };
-    
-    return [[JRRxHttpClient sharedClient] performRequestWithBaseUrl:@"http://gameofthrones.wikia.com/api/v1/Articles/Top" query:queryString transform:^id(NSDictionary *jsonResponse) {
+
+    return [self.sharedClient performRequestWithBaseUrl:request query:queryString transform:^id(NSDictionary *jsonResponse) {
         __block NSMutableArray *result = [NSMutableArray new];
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {

@@ -10,6 +10,8 @@
 #import "JRTableViewBinding.h"
 #import "Article.h"
 #import "ArticleDetailViewController.h"
+#import "NWApplicationAssembly.h"
+#import "NWCoreComponents.h"
 
 @interface ArticleViewController ()
 
@@ -18,12 +20,19 @@
 
 @end
 
-@implementation ArticleViewController
+@implementation ArticleViewController {
+    NSString *_articleRequest;
+    NWApplicationAssembly *_assembly;
+    NWCoreComponents *_core;
+}
 
-- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel {
+- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel articleRequest:(NSString *)articleRequest assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core {
     self = [super init];
     if (self) {
         _viewModel = viewModel;
+        _articleRequest = articleRequest;
+        _assembly = assembly;
+        _core = core;
     }
     return self;
 }
@@ -34,31 +43,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    self.tableView.backgroundColor = [UIColor blackColor];
-    
+            
     [self bindViewModel];
 }
 
 - (void)bindViewModel {
     @weakify(self)
-    
-    UINib *nib = [UINib nibWithNibName:@"ArticleCell" bundle:nil];
-    
+        
     RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(Article *article) {
         @strongify(self)
-        ArticleDetailViewController *detail = [[ArticleDetailViewController alloc] initWithArticle:article];
+        ArticleDetailViewController *detail = [_assembly articleDetailwithArticle:article];
         
         [self.navigationController pushViewController:detail animated:YES];
         return [RACSignal empty];
     }];
     
-    self.binding = [JRTableViewBinding bindingHelperForTableView:self.tableView
-                                                    sourceSignal:RACObserve(self.viewModel, self.searchResults)
-                                                selectionCommand:selectionCommand
-                                                    templateCell:nib];
+    self.binding = [_core tableViewBinding:self.tableView
+                              sourceSignal:RACObserve(self.viewModel, self.searchResults)
+                          selectionCommand:selectionCommand
+                              templateCell:[UINib nibWithNibName:self.templateCell
+                                                          bundle:nil]];
     
-    [[self.viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+    [[[self.viewModel executeSignalWithRequest:_articleRequest] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
         [self.tableView reloadData];
     }];

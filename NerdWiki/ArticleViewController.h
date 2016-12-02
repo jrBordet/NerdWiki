@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ArticleViewModel.h"
 
+@class NWApplicationAssembly;
+@class NWCoreComponents;
+
 @interface ArticleViewController : UITableViewController
 
-- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel;
+@property (nonatomic, strong) NSString *templateCell;
+
+- (instancetype)initWithViewModel:(ArticleViewModel *)viewModel articleRequest:(NSString *)articleRequest assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core;
 
 @end

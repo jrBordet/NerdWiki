@@ -10,8 +10,6 @@
 #import "ReactiveCocoa/RACEXTScope.h"
 #import "NWApplicationAssembly.h"
 #import "NWCoreComponents.h"
-#import "JRCollectionViewBinding.h"
-#import "JRTableViewBinding.h"
 #import "WikiArticleDetailViewController.h"
 
 @interface WikiViewController ()
