@@ -123,7 +123,6 @@
 
 - (id<ArticleServiceProtocol>)articleService {
     return [TyphoonDefinition withClass:[ArticleService class] configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(serviceUrl) with:@"http://gameofthrones.wikia.com/api/v1/Articles/Top"];
         [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
         
         [definition useInitializer:@selector(init)];
