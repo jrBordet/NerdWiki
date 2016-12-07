@@ -10,19 +10,15 @@
 #import "WikiArticle.h"
 #import "JRRxHttpClient.h"
 #import "UIImageView+Geometry.h"
+#import "NWCoreComponents.h"
 
 @implementation WikiCell
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.thumbnailImage.image = [[UIImage alloc] initWithContentsOfFile:@"placeholder.png"];
-    }
-    return self;
-}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
+        
+    [self needsUpdateConstraints];
+    [self updateConstraints];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     
@@ -35,7 +31,7 @@
 - (void)bindViewModel:(id)viewModel {
     WikiArticle *article = viewModel;
     
-    if (![article.url isEqual:[NSNull null]]) {        
+    if (![article.url isEqual:[NSNull null]]) {
         [[[JRRxHttpClient sharedClient] fetchImageFromUrl:[NSURL URLWithString:article.wordmark] placheholderImage:self.thumbnailImage] subscribeCompleted:^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.thumbnailImage centerWithSize:self.contentView.bounds.size];

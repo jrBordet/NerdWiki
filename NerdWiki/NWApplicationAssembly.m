@@ -13,6 +13,7 @@
 #import "WikiServiceProtocol.h"
 #import "WikiArticleDetail.h"
 #import "WikiArticleDetailViewController.h"
+#import "WikiCell.h"
 #import "ArticleViewController.h"
 #import "ArticleViewModel.h"
 #import "JRTableViewBinding.h"

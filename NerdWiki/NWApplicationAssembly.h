@@ -17,6 +17,7 @@
 @class JRTableViewBinding;
 
 @class WikiViewController;
+@class WikiCell;
 @class WikiArticleDetailViewController;
 @class WikiArticle;
 @class ArticleDetailViewController;

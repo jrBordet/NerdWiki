@@ -46,7 +46,7 @@
             self->_data = x;
             [self->_tableView reloadData];
         }];
-        
+                
         _templateCell = [[templateCellNib instantiateWithOwner:nil options:nil] firstObject];
         [tableView registerNib:templateCellNib forCellReuseIdentifier:_templateCell.reuseIdentifier];
         

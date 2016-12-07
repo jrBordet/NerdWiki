@@ -11,6 +11,6 @@
 
 @interface WikiCell : UITableViewCell <JRReactiveView>
 
-@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImage;
 
 @end

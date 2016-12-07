@@ -45,7 +45,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
-    
+        
     [self bindViewModel];
 }
 
