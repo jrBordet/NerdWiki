@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JRReactiveView.h"
+#import "RBReactiveView.h"
 
-@interface ArticleCell : UITableViewCell <JRReactiveView>
+@interface ArticleCell : UITableViewCell <RBReactiveView>
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

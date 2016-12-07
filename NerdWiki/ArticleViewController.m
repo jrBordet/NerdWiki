@@ -7,7 +7,6 @@
 //
 
 #import "ArticleViewController.h"
-#import "JRTableViewBinding.h"
 #import "Article.h"
 #import "ArticleDetailViewController.h"
 #import "NWApplicationAssembly.h"

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JRReactiveView.h"
+#import "RBReactiveView.h"
 
-@interface WikiCell : UITableViewCell <JRReactiveView>
+@interface WikiCell : UITableViewCell <RBReactiveView>
 
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImage;
 

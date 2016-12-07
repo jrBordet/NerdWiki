@@ -19,8 +19,8 @@
     }];
 }
 
-- (JRTableViewBinding *)tableViewBinding:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection templateCell:(UINib *)templateCellNib {
-    return [TyphoonDefinition withClass:[JRTableViewBinding class] configuration:^(TyphoonDefinition *definition) {
+- (RBTableViewBinding *)tableViewBinding:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection templateCell:(UINib *)templateCellNib {
+    return [TyphoonDefinition withClass:[RBTableViewBinding class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(initWithTableView:sourceSignal:selectionCommand:templateCell:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:tableView];
             [initializer injectParameterWith:source];

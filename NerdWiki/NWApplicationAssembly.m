@@ -16,7 +16,6 @@
 #import "WikiCell.h"
 #import "ArticleViewController.h"
 #import "ArticleViewModel.h"
-#import "JRTableViewBinding.h"
 #import "ArticleServiceProtocol.h"
 #import "ArticleService.h"
 #import "ArticleDetailViewController.h"

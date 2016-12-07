@@ -9,7 +9,7 @@ target 'NerdWiki' do
     
     pod 'ReactiveCocoa', '2.1.8'
     pod 'Typhoon', '~> 3.0'
-    pod 'RxBinding', :path => '../'
+    pod 'RxBinding', :path => '../RxBinding'
     
 end
 

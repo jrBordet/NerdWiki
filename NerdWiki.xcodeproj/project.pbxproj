@@ -19,7 +19,6 @@
 		38A22FCA1DC9D397001CCCFE /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FC81DC9D397001CCCFE /* ArticleDetailViewController.xib */; };
 		38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD11DCA0900001CCCFE /* WikiArticle.m */; };
 		38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FD61DCA0970001CCCFE /* WikiViewController.m */; };
-		38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */; };
 		38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A22FDD1DCA2143001CCCFE /* WikiCell.m */; };
 		38A22FE01DCA2143001CCCFE /* WikiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A22FDE1DCA2143001CCCFE /* WikiCell.xib */; };
 		38B64EEE1DCF857500BADEB7 /* WikiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B64EED1DCF857500BADEB7 /* WikiService.m */; };
@@ -36,10 +35,8 @@
 		38C19ED51D576C2200004086 /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED41D576C2200004086 /* ArticleService.m */; };
 		38E27B851D5859AD005B3E8F /* ArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B841D5859AD005B3E8F /* ArticleViewModel.m */; };
 		38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */; };
-		38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B951D58615A005B3E8F /* JRTableViewBinding.m */; };
 		38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F27FC11D5B01BD00805240 /* ArticleCell.m */; };
 		38F27FC41D5B01BD00805240 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F27FC21D5B01BD00805240 /* ArticleCell.xib */; };
-		38F665901DF15BCE0018D233 /* RxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F6658F1DF15BCE0018D233 /* RxTableViewController.m */; };
 		38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F7F2061D910C9B005C2F13 /* JRRxHttpClient.m */; };
 		940659401B16EC860EDE721F /* libPods-NerdWiki.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */; };
 		FFAAC2779D456D8D0B87D6FF /* libPods-NerdWikiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E345BA97A17C519ED0B07B02 /* libPods-NerdWikiTests.a */; };
@@ -79,8 +76,6 @@
 		38A22FD11DCA0900001CCCFE /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
 		38A22FD51DCA0970001CCCFE /* WikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewController.h; sourceTree = "<group>"; };
 		38A22FD61DCA0970001CCCFE /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
-		38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRCollectionViewBinding.h; sourceTree = "<group>"; };
-		38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRCollectionViewBinding.m; sourceTree = "<group>"; };
 		38A22FDC1DCA2143001CCCFE /* WikiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCell.h; sourceTree = "<group>"; };
 		38A22FDD1DCA2143001CCCFE /* WikiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCell.m; sourceTree = "<group>"; };
 		38A22FDE1DCA2143001CCCFE /* WikiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiCell.xib; sourceTree = "<group>"; };
@@ -116,14 +111,9 @@
 		38E27B841D5859AD005B3E8F /* ArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewModel.m; sourceTree = "<group>"; };
 		38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
-		38E27B931D58611E005B3E8F /* JRReactiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRReactiveView.h; sourceTree = "<group>"; };
-		38E27B941D58615A005B3E8F /* JRTableViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTableViewBinding.h; sourceTree = "<group>"; };
-		38E27B951D58615A005B3E8F /* JRTableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTableViewBinding.m; sourceTree = "<group>"; };
 		38F27FC01D5B01BD00805240 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		38F27FC11D5B01BD00805240 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		38F27FC21D5B01BD00805240 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
-		38F6658E1DF15BCE0018D233 /* RxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxTableViewController.h; sourceTree = "<group>"; };
-		38F6658F1DF15BCE0018D233 /* RxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxTableViewController.m; sourceTree = "<group>"; };
 		38F7F2051D910C9B005C2F13 /* JRRxHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRRxHttpClient.h; sourceTree = "<group>"; };
 		38F7F2061D910C9B005C2F13 /* JRRxHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRRxHttpClient.m; sourceTree = "<group>"; };
 		81051F04908D0F1C9977F3EC /* Pods-NerdWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NerdWikiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NerdWikiTests/Pods-NerdWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -400,13 +390,6 @@
 		38E27B921D5860F6005B3E8F /* UIUtil */ = {
 			isa = PBXGroup;
 			children = (
-				38A22FD91DCA0A12001CCCFE /* JRCollectionViewBinding.h */,
-				38A22FDA1DCA0A12001CCCFE /* JRCollectionViewBinding.m */,
-				38E27B931D58611E005B3E8F /* JRReactiveView.h */,
-				38E27B941D58615A005B3E8F /* JRTableViewBinding.h */,
-				38E27B951D58615A005B3E8F /* JRTableViewBinding.m */,
-				38F6658E1DF15BCE0018D233 /* RxTableViewController.h */,
-				38F6658F1DF15BCE0018D233 /* RxTableViewController.m */,
 			);
 			name = UIUtil;
 			sourceTree = "<group>";
@@ -643,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38A22FDB1DCA0A12001CCCFE /* JRCollectionViewBinding.m in Sources */,
 				38A22FDF1DCA2143001CCCFE /* WikiCell.m in Sources */,
 				38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */,
 				38C19EA61D57699800004086 /* AppDelegate.m in Sources */,
@@ -656,12 +638,10 @@
 				38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */,
 				38A22FC91DC9D397001CCCFE /* ArticleDetailViewController.m in Sources */,
 				38F7F2071D910C9B005C2F13 /* JRRxHttpClient.m in Sources */,
-				38E27B961D58615A005B3E8F /* JRTableViewBinding.m in Sources */,
 				38C19ECC1D576AB700004086 /* JRHttpClient.m in Sources */,
 				38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */,
 				385F5CD21DEC0C9A003EB103 /* NWCoreComponents.m in Sources */,
 				38C19EA31D57699800004086 /* main.m in Sources */,
-				38F665901DF15BCE0018D233 /* RxTableViewController.m in Sources */,
 				385F5CD81DEC11CE003EB103 /* WikiArticleDetailViewController.m in Sources */,
 				38A22FC51DC9CCA8001CCCFE /* UIImageView+Geometry.m in Sources */,
 				388D80D91DD45AB600CFD988 /* WikiArticleDetail.m in Sources */,

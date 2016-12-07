@@ -45,7 +45,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
-        
+    
     [self bindViewModel];
 }
 
@@ -94,9 +94,9 @@
     UINib *templateCell = [UINib nibWithNibName:self.templateCell bundle:nil];
     
     self.binding = [_core tableViewBinding:self.tableView
-                                      sourceSignal:RACObserve(self, searchResults)
-                                  selectionCommand:self.selectionCommand
-                                      templateCell:templateCell];
+                              sourceSignal:RACObserve(self, searchResults)
+                          selectionCommand:self.selectionCommand
+                              templateCell:templateCell];
     
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         [self.tableView reloadData];
