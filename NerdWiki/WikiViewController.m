@@ -14,7 +14,7 @@
 
 @interface WikiViewController ()
 
-@property (nonatomic, strong) JRTableViewBinding *binding;
+@property (nonatomic, strong) RBTableViewBinding *binding;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) RACCommand *selectionCommand;
 
