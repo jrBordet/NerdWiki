@@ -20,6 +20,8 @@
     [self needsUpdateConstraints];
     [self updateConstraints];
     
+    _thumbnailImage.contentMode = UIViewContentModeScaleAspectFill;
+    
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
