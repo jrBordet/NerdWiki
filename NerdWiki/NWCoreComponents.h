@@ -8,7 +8,7 @@
 
 #import <Typhoon/Typhoon.h>
 #import <UIKit/UIKit.h>
-#import "JRTableViewBinding.h"
+#import "RBTableViewBinding.h"
 
 @protocol RxHttpClientProtocol;
 
@@ -16,9 +16,11 @@
 
 - (id<RxHttpClientProtocol>)rxHttpClient;
 
-- (JRTableViewBinding *)tableViewBinding:(UITableView *)tableView
+- (RBTableViewBinding *)tableViewBinding:(UITableView *)tableView
                             sourceSignal:(RACSignal *)source
                         selectionCommand:(RACCommand *)selection
                             templateCell:(UINib *)templateCellNib;
+
+
 
 @end

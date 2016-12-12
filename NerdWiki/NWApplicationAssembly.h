@@ -11,13 +11,17 @@
 #import "NWCoreComponents.h"
 #import "AppDelegate.h"
 
+
 @class NWCoreComponents;
 
 @class JRTableViewBinding;
 
 @class WikiViewController;
+@class WikiCell;
 @class WikiArticleDetailViewController;
 @class WikiArticle;
+@class ArticleDetailViewController;
+@class Article;
 
 @class ArticleViewController;
 
@@ -31,6 +35,8 @@
 
 - (WikiArticleDetailViewController *)detailViewControllerWith:(WikiArticle *)article;
 
-- (ArticleViewController *)articleViewController;
+- (ArticleViewController *)articleViewControllerWithArticleRequest:(NSString *)articleRequest;
+
+- (ArticleDetailViewController *)articleDetailwithArticle:(Article *)article;
 
 @end

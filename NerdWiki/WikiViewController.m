@@ -10,13 +10,11 @@
 #import "ReactiveCocoa/RACEXTScope.h"
 #import "NWApplicationAssembly.h"
 #import "NWCoreComponents.h"
-#import "JRCollectionViewBinding.h"
-#import "JRTableViewBinding.h"
 #import "WikiArticleDetailViewController.h"
 
 @interface WikiViewController ()
 
-@property (nonatomic, strong) JRTableViewBinding *binding;
+@property (nonatomic, strong) RBTableViewBinding *binding;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) RACCommand *selectionCommand;
 
@@ -96,9 +94,9 @@
     UINib *templateCell = [UINib nibWithNibName:self.templateCell bundle:nil];
     
     self.binding = [_core tableViewBinding:self.tableView
-                                      sourceSignal:RACObserve(self, searchResults)
-                                  selectionCommand:self.selectionCommand
-                                      templateCell:templateCell];
+                              sourceSignal:RACObserve(self, searchResults)
+                          selectionCommand:self.selectionCommand
+                              templateCell:templateCell];
     
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         [self.tableView reloadData];

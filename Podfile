@@ -7,9 +7,10 @@ source "https://github.com/CocoaPods/Old-Specs"
 
 target 'NerdWiki' do
     
-    #pod 'GVRSDK'
     pod 'ReactiveCocoa', '2.1.8'
     pod 'Typhoon', '~> 3.0'
+    pod 'RxBinding', :path => '../RxBinding'
+    pod 'RxNetworking', :path => '../RxNetworking'
     
 end
 

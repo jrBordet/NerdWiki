@@ -53,7 +53,10 @@
 }
 
 - (void)openArticleList {
-    ArticleViewController *list = [_assembly articleViewController];
+    // @"http://gameofthrones.wikia.com/api/v1/Articles/Top"
+    NSString *request = [NSString stringWithFormat:@"http://%@/api/v1/Articles/Top", _articleDetail.domain];
+    
+    ArticleViewController *list = [_assembly articleViewControllerWithArticleRequest:request];
     
     [self.navigationController pushViewController:list
                                          animated:YES];

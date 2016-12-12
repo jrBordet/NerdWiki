@@ -12,12 +12,9 @@
 
 @protocol ArticleServiceProtocol <NSObject>
 
-// Methods
-/**
- *
- *
- *  @return a list of top Characters of GOT
- */
-- (RACSignal *)fetchTopCharacters;
+- (RACSignal *)fetchTopCharactersWithRequest:(NSString *)request;
+
+@property (nonatomic, strong) NSString *serviceUrl;
+@property (nonatomic, strong) id<RxHttpClientProtocol> sharedClient;
 
 @end

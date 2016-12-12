@@ -26,7 +26,7 @@
 }
 
 - (RACSignal *)executeSignal {
-    @weakify(self)
+   // @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
        // @strongify(self)
         
