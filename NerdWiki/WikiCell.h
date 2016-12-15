@@ -12,5 +12,6 @@
 @interface WikiCell : UITableViewCell <RBReactiveView>
 
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImage;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 @end

@@ -31,7 +31,7 @@
                     <rect key="frame" x="16" y="182" width="343" height="327"/>
                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum efficitur lobortis. Integer eu rhoncus arcu, non dapibus orci. Proin eu consequat justo. In hac habitasse platea dictumst. Cras maximus, nisi nec suscipit egestas, lacus magna sagittis mauris, aliquet fringilla libero mauris ut quam. Duis elit nulla, sagittis ac interdum in, tempus vitae urna. Nam tempus eget massa ac tempus. Duis sit amet erat et mi rhoncus venenatis ut vitae nibh. Curabitur dignissim, lacus finibus bibendum imperdiet, erat dolor bibendum elit, vitae molestie neque erat eu velit.</string>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

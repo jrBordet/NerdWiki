@@ -16,6 +16,8 @@
 @interface WikiArticleDetailViewController : UIViewController
 
 @property (nonatomic, strong) id<RxHttpClientProtocol> sharedClient;
+@property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, strong) UIColor *navigationItemColor;
 
 - (instancetype)initWitArticleDetail:(WikiArticleDetail *)articleDetail assembly:(NWApplicationAssembly *)assembly;
 

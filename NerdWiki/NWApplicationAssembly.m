@@ -44,6 +44,7 @@
 - (WikiViewController *)wikiViewController {
     return [TyphoonDefinition withClass:[WikiViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(templateCell) with:@"WikiCell"];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
         
         [definition useInitializer:@selector(initWithViewModel:assembly:core:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self wikiModel]];
@@ -57,6 +58,8 @@
 - (WikiArticleDetailViewController *)detailViewControllerWith:(WikiArticle *)article {
     return [TyphoonDefinition withClass:[WikiArticleDetailViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
+        [definition injectProperty:@selector(navigationItemColor) with:[UIColor greenColor]];
 
         [definition useInitializer:@selector(initWitArticleDetail:assembly:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self wikiArticleDetailWith:article]];
@@ -68,6 +71,7 @@
 - (ArticleViewController *)articleViewControllerWithArticleRequest:(NSString *)articleRequest {
     return [TyphoonDefinition withClass:[ArticleViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(templateCell) with:@"ArticleCell"];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
         
         [definition useInitializer:@selector(initWithViewModel:articleRequest:assembly:core:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self articleViewModel]];
@@ -124,7 +128,6 @@
 - (id<ArticleServiceProtocol>)articleService {
     return [TyphoonDefinition withClass:[ArticleService class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
-        
         [definition useInitializer:@selector(init)];
     }];
 }

@@ -15,6 +15,7 @@
 @interface ArticleViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *templateCell;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 - (instancetype)initWithViewModel:(ArticleViewModel *)viewModel articleRequest:(NSString *)articleRequest assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core;
 

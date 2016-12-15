@@ -22,6 +22,8 @@
     
     _thumbnailImage.contentMode = UIViewContentModeScaleAspectFill;
     
+    self.backgroundColor = [UIColor colorWithRed:255/29 green:255/29 blue:255/29 alpha:0.75];
+    
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     
     [[NSNotificationCenter defaultCenter] addObserver:self

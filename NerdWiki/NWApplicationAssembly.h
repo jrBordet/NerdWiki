@@ -14,8 +14,6 @@
 
 @class NWCoreComponents;
 
-@class JRTableViewBinding;
-
 @class WikiViewController;
 @class WikiCell;
 @class WikiArticleDetailViewController;

@@ -14,7 +14,7 @@
 
 @interface ArticleViewController ()
 
-@property (nonatomic, strong) JRTableViewBinding *binding;
+@property (nonatomic, strong) RBTableViewBinding *binding;
 @property (nonatomic, strong) ArticleViewModel *viewModel;
 
 @end
@@ -42,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.backgroundColor = self.backgroundColor;
             
     [self bindViewModel];
 }

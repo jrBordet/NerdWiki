@@ -16,6 +16,7 @@
 @interface WikiViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *templateCell;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 - (instancetype)initWithViewModel:(id<WikiViewModelProtocol>)viewModel assembly:(NWApplicationAssembly *)assembly core:(NWCoreComponents *)core;
 

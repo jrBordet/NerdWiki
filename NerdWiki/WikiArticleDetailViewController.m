@@ -36,13 +36,18 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.title = _articleDetail.name;
+    self.navigationController.navigationBar.barTintColor = self.backgroundColor;
+    self.navigationController.navigationBar.tintColor = self.navigationItemColor;
     
-    self.navigationItem.titleView.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = self.backgroundColor;
     
-    UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithTitle:@"List"
+    UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithTitle:@"Characters"
                                                                    style:UIBarButtonItemStylePlain
                                                                   target:self
                                                                   action:@selector(openArticleList)];
+    
+    listButton.tintColor = self.navigationItemColor;
     
     self.navigationItem.rightBarButtonItem = listButton;
     

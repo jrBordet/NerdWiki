@@ -45,6 +45,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
+    self.tableView.backgroundColor = self.backgroundColor;
     
     [self bindViewModel];
 }
