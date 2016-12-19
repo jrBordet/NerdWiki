@@ -19,6 +19,7 @@
 #import "ArticleServiceProtocol.h"
 #import "ArticleService.h"
 #import "ArticleDetailViewController.h"
+#import "UIColor+NWTheme.h"
 
 @implementation NWApplicationAssembly
 
@@ -44,7 +45,7 @@
 - (WikiViewController *)wikiViewController {
     return [TyphoonDefinition withClass:[WikiViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(templateCell) with:@"WikiCell"];
-        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor bgColor]];
         
         [definition useInitializer:@selector(initWithViewModel:assembly:core:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self wikiModel]];
@@ -58,7 +59,7 @@
 - (WikiArticleDetailViewController *)detailViewControllerWith:(WikiArticle *)article {
     return [TyphoonDefinition withClass:[WikiArticleDetailViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
-        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor bgColor]];
         [definition injectProperty:@selector(navigationItemColor) with:[UIColor greenColor]];
 
         [definition useInitializer:@selector(initWitArticleDetail:assembly:) parameters:^(TyphoonMethod *initializer) {
@@ -71,7 +72,7 @@
 - (ArticleViewController *)articleViewControllerWithArticleRequest:(NSString *)articleRequest {
     return [TyphoonDefinition withClass:[ArticleViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(templateCell) with:@"ArticleCell"];
-        [definition injectProperty:@selector(backgroundColor) with:[UIColor darkGrayColor]];
+        [definition injectProperty:@selector(backgroundColor) with:[UIColor bgColor]];
         
         [definition useInitializer:@selector(initWithViewModel:articleRequest:assembly:core:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self articleViewModel]];
