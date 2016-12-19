@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) RBTableViewBinding *binding;
 @property (nonatomic, strong) ArticleViewModel *viewModel;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
 @end
 
@@ -32,12 +33,19 @@
         _articleRequest = articleRequest;
         _assembly = assembly;
         _core = core;
+        
+        _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _spinner.frame = CGRectMake( [UIScreen mainScreen].bounds.origin.x, [UIScreen mainScreen].bounds.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        _spinner.hidesWhenStopped = YES;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setToolbarHidden:YES animated:YES];
+    
+    self.spinner.startAnimating;
+    [self.tableView addSubview:_spinner];
 }
 
 - (void)viewDidLoad {
@@ -67,6 +75,7 @@
     
     [[[self.viewModel executeSignalWithRequest:_articleRequest] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
+        self.spinner.stopAnimating;
         [self.tableView reloadData];
     }];
 }

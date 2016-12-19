@@ -11,12 +11,14 @@
 #import "NWApplicationAssembly.h"
 #import "NWCoreComponents.h"
 #import "WikiArticleDetailViewController.h"
+@import UIKit;
 
 @interface WikiViewController ()
 
 @property (nonatomic, strong) RBTableViewBinding *binding;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) RACCommand *selectionCommand;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
 @end
 
@@ -33,17 +35,25 @@
         _viewModel = viewModel;
         _assembly = assembly;
         _core = core;
+        
+        _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _spinner.frame = CGRectMake( [UIScreen mainScreen].bounds.origin.x, [UIScreen mainScreen].bounds.origin.y, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        _spinner.hidesWhenStopped = YES;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
+    
+    [self.tableView addSubview:_spinner];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.spinner.startAnimating;
+
     self.navigationController.navigationBarHidden = YES;
     self.tableView.backgroundColor = self.backgroundColor;
     
@@ -100,8 +110,11 @@
                               templateCell:templateCell];
     
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self)
+        self.spinner.stopAnimating;
         [self.tableView reloadData];
     }];
+    
 }
 
 @end
