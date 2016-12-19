@@ -33,6 +33,7 @@
 		38C19ED51D576C2200004086 /* ArticleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C19ED41D576C2200004086 /* ArticleService.m */; };
 		38E27B851D5859AD005B3E8F /* ArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B841D5859AD005B3E8F /* ArticleViewModel.m */; };
 		38E27B8F1D585BEF005B3E8F /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */; };
+		38F071751E03C63500298E66 /* UIColor+NWTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F071741E03C63500298E66 /* UIColor+NWTheme.m */; };
 		38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F27FC11D5B01BD00805240 /* ArticleCell.m */; };
 		38F27FC41D5B01BD00805240 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F27FC21D5B01BD00805240 /* ArticleCell.xib */; };
 		940659401B16EC860EDE721F /* libPods-NerdWiki.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF922B3C8F9F11649D15A2F /* libPods-NerdWiki.a */; };
@@ -102,6 +103,8 @@
 		38E27B841D5859AD005B3E8F /* ArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewModel.m; sourceTree = "<group>"; };
 		38E27B8D1D585BEF005B3E8F /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		38E27B8E1D585BEF005B3E8F /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
+		38F071731E03C63500298E66 /* UIColor+NWTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NWTheme.h"; sourceTree = "<group>"; };
+		38F071741E03C63500298E66 /* UIColor+NWTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NWTheme.m"; sourceTree = "<group>"; };
 		38F27FC01D5B01BD00805240 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		38F27FC11D5B01BD00805240 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		38F27FC21D5B01BD00805240 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
@@ -282,6 +285,7 @@
 		38C19EA01D57699800004086 /* NerdWiki */ = {
 			isa = PBXGroup;
 			children = (
+				38F071721E03C61800298E66 /* common */,
 				38B9F5661D925AF9004B97B4 /* Assembly */,
 				38C19EA41D57699800004086 /* AppDelegate.h */,
 				38C19EA51D57699800004086 /* AppDelegate.m */,
@@ -350,6 +354,15 @@
 				38A22FCB1DC9D39F001CCCFE /* Detail */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		38F071721E03C61800298E66 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				38F071731E03C63500298E66 /* UIColor+NWTheme.h */,
+				38F071741E03C63500298E66 /* UIColor+NWTheme.m */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		5FC193503C4477CC0F9864CC /* Pods */ = {
@@ -427,7 +440,7 @@
 				TargetAttributes = {
 					38C19E9D1D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XP6P798NUV;
+						DevelopmentTeam = VV827RJWNH;
 					};
 					38C19EB91D57699800004086 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -583,6 +596,7 @@
 				38C19EAF1D57699800004086 /* NerdWiki.xcdatamodeld in Sources */,
 				38B9F5691D925B33004B97B4 /* NWApplicationAssembly.m in Sources */,
 				38A22FD71DCA0970001CCCFE /* WikiViewController.m in Sources */,
+				38F071751E03C63500298E66 /* UIColor+NWTheme.m in Sources */,
 				38A22FD21DCA0900001CCCFE /* WikiArticle.m in Sources */,
 				38A22FC91DC9D397001CCCFE /* ArticleDetailViewController.m in Sources */,
 				38F27FC31D5B01BD00805240 /* ArticleCell.m in Sources */,
@@ -711,7 +725,7 @@
 			baseConfigurationReference = FAA5BAE426D53DD720F451D8 /* Pods-NerdWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XP6P798NUV;
+				DEVELOPMENT_TEAM = VV827RJWNH;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -725,7 +739,7 @@
 			baseConfigurationReference = 2A9D5EFAA8E50E3703266F0E /* Pods-NerdWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XP6P798NUV;
+				DEVELOPMENT_TEAM = VV827RJWNH;
 				INFOPLIST_FILE = NerdWiki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
