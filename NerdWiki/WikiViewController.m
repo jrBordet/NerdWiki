@@ -52,12 +52,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.spinner.startAnimating;
+    [self.spinner startAnimating];
 
     self.navigationController.navigationBarHidden = YES;
     self.tableView.backgroundColor = self.backgroundColor;
     
+    [self initConstraints];
+    
     [self bindViewModel];
+}
+
+-(void)initConstraints {
+//    id views = @{
+//                 @"view" : self.tableView,
+//                 @"spinner" : _spinner
+//                 };
+    
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:views]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:views]];
+
+    
+//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_spinner
+//                                                          attribute:NSLayoutAttributeCenterX
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:self.tableView
+//                                                          attribute:NSLayoutAttributeCenterX
+//                                                         multiplier:1.0
+//                                                           constant:0.0]];
+//    
+//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_spinner
+//                                                          attribute:NSLayoutAttributeCenterY
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:self.tableView
+//                                                          attribute:NSLayoutAttributeCenterY
+//                                                         multiplier:1.0
+//                                                           constant:0.0]];
 }
 
 - (instancetype)init {
@@ -95,7 +124,7 @@
 
 - (void)bindViewModel {
     @weakify(self)
-    
+          
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
         
@@ -111,10 +140,11 @@
     
     [[_viewModel.executeSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
-        self.spinner.stopAnimating;
+        [self.spinner stopAnimating];
         [self.tableView reloadData];
     }];
     
+    //RAC([UIApplication sharedApplication], networkActivityIndicatorVisible) = _viewModel.executeSignal;
 }
 
 @end

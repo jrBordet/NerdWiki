@@ -10,15 +10,19 @@
 #import "WikiViewModel.h"
 #import "WikiService.h"
 #import "WikiArticle.h"
+#import "JRRxHttpClient.h"
 
 SPEC_BEGIN(WikiViewModelSpec)
 
 describe(@"WikiViewModel", ^{
     context(@"description", ^{
         __block NSMutableArray *result = [NSMutableArray new];
+        __block id<WikiServiceProtocol> service =  [WikiService new];
 
         it(@"should return an NSArray of WikiArticle elements", ^{
-            WikiService *service = [WikiService new];
+            service.sharedClient = [JRRxHttpClient sharedClient];
+            service.serviceUrl = @"http://www.wikia.com/api/v1/Wikis/List?expand=1&lang=en&batch=1";
+            
             WikiViewModel *viewModel = [[WikiViewModel alloc] initWithService:service];
             
             [viewModel.executeSignal subscribeNext:^(id x) {

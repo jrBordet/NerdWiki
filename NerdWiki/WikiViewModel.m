@@ -8,9 +8,9 @@
 
 #import "WikiViewModel.h"
 
-@interface WikiViewModel () {
-    id <WikiServiceProtocol> _service;
-}
+@interface WikiViewModel ()
+
+@property (nonatomic, strong) id <WikiServiceProtocol> service;
 
 @end
 
@@ -26,11 +26,11 @@
 }
 
 - (RACSignal *)executeSignal {
-   // @weakify(self)
+    @weakify(self)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-       // @strongify(self)
+        @strongify(self)
         
-        [[_service fetchTopWikies] subscribeNext:^(id result) {
+        [[self.service fetchTopWikies] subscribeNext:^(id result) {
             
             [subscriber sendNext:result];
             [subscriber sendCompleted];

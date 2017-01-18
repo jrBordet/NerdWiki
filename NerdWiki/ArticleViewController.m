@@ -44,7 +44,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setToolbarHidden:YES animated:YES];
     
-    self.spinner.startAnimating;
     [self.tableView addSubview:_spinner];
 }
 
@@ -52,7 +51,9 @@
     [super viewDidLoad];
     
     self.tableView.backgroundColor = self.backgroundColor;
-            
+
+    [self.spinner startAnimating];
+
     [self bindViewModel];
 }
 
@@ -75,7 +76,7 @@
     
     [[[self.viewModel executeSignalWithRequest:_articleRequest] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self)
-        self.spinner.stopAnimating;
+        [self.spinner stopAnimating];
         [self.tableView reloadData];
     }];
 }

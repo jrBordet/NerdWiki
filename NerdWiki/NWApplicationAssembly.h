@@ -11,7 +11,6 @@
 #import "NWCoreComponents.h"
 #import "AppDelegate.h"
 
-
 @class NWCoreComponents;
 
 @class WikiViewController;
