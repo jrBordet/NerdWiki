@@ -34,7 +34,7 @@ describe(@"WikiArticle", ^{
     
     describe(@"parseWikiArticlesWithJSONResponse:", ^{
         context(@"Server request successful", ^{
-            it(@"should return all related articles url", ^{
+            it(@"should return all related articles urls", ^{
                 NSString *url = @"http://www.wikia.com/api/v1/Wikis/List?expand=100&batch=1";
                 
                 [[[[JRRxHttpClient sharedClient] performRequestWithBaseUrl:url query:nil transform:^id(NSDictionary *jsonResponse) {
