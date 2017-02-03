@@ -4,13 +4,14 @@
 # use_frameworks!
 
 source "https://github.com/CocoaPods/Old-Specs"
+source "https://github.com/jrBordet/RxFramework.podspec.git"
 
 target 'NerdWiki' do
     
     pod 'ReactiveCocoa', '2.1.8'
     pod 'Typhoon', '~> 3.0'
-    pod 'RxBinding', :path => '../RxBinding'
-    pod 'RxNetworking', :path => '../RxNetworking'
+    pod 'RxBinding', '1.0.0'
+    pod 'RxNetworking', '1.0.0'
     
 end
 
