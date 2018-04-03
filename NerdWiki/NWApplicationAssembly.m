@@ -121,7 +121,7 @@
 
 - (id<WikiServiceProtocol>)wikiService {
     return [TyphoonDefinition withClass:[WikiService class] configuration:^(TyphoonDefinition *definition) {
-        [definition injectProperty:@selector(serviceUrl) with:@"http://www.wikia.com/api/v1/Wikis/List?expand=1&lang=en&batch=1"];
+        [definition injectProperty:@selector(serviceUrl) with:@"http://www.wikia.com/api/v1/Wikis/List?expand=1"];
         [definition injectProperty:@selector(sharedClient) with:[_coreComponents rxHttpClient]];
     }];
 }

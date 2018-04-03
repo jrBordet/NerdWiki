@@ -24,7 +24,7 @@ describe(@"WikiService", ^{
                 __block NSMutableArray *result = [NSMutableArray new];
                 
                 service.sharedClient = [JRRxHttpClient sharedClient];
-                service.serviceUrl = @"http://www.wikia.com/api/v1/Wikis/List?expand=1&lang=en&batch=1";
+                service.serviceUrl = @"http://www.wikia.com/api/v1/Wikis/List?expand=1";
                 
                 [service.fetchTopWikies subscribeNext:^(id wikies) {
                     result = wikies;

@@ -19,7 +19,7 @@
         __block NSMutableArray *result = [NSMutableArray new];
         
         [[jsonResponse objectForKey:@"items"] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
-            [result addObject:[[WikiArticle alloc] initWithTitle:object[@"title"]
+            [result addObject:[[WikiArticle alloc] initWithTitle:object[@"name"]
                                                           domain:object[@"domain"]
                                                              url:object[@"url"]
                                                         wordmark:object[@"wordmark"]
