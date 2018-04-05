@@ -59,6 +59,6 @@ NerdWiki is a simple project based on [Fandom API](http://www.wikia.com/api/v1/)
 | ReactiveCocoa     | 2.1.8         |
 | Typhoon           | 3.0           |
 | RxBinding         | 1.0.0         |
-| RxNetworking      | 1.0.0 .       |
+| RxNetworking      | 1.0.0        |
 
 
